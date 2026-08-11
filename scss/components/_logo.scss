@@ -1,0 +1,11 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 2.2rem;
+        line-height: 145.454%;
+    }
+}
