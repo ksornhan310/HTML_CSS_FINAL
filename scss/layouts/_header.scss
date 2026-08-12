@@ -1,14 +1,14 @@
-%flex-center-y {
+%flexItemsCenter {
     display: flex;
     align-items: center;
 }
 
 .header {
-    background: #eee;
+    background: var(--header-bg-color);
 }
 
 .top-bar {
-    @extend %flex-center-y;
+    @extend %flexItemsCenter;
     padding: 30px 0;
 }
 
@@ -17,12 +17,12 @@
     margin-left: 144px;
 
     &__list {
-        @extend %flex-center-y;
+        @extend %flexItemsCenter;
         gap: 30px;
     }
 
     &__link {
-        @extend %flex-center-y;
+        @extend %flexItemsCenter;
         gap: 6px;
         font-weight: 500;
         font-size: 1.5rem;
@@ -38,16 +38,16 @@
 .top-act {
     margin-left: auto;
 
-    @extend %flex-center-y;
+    @extend %flexItemsCenter;
     gap: 20px;
 
     &__group {
-        @extend %flex-center-y;
+        @extend %flexItemsCenter;
         min-width: 50px;
         height: 50px;
         border-radius: 8px;
-        background: #fff;
-        box-shadow: 0px 20px 60px 10px #EDEDF633;
+        background: var(--top-act-bg-color);
+        box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
     }
 
     &__group--single &__btn {
@@ -55,7 +55,7 @@
     }
 
     &__btn {
-        @extend %flex-center-y;
+        @extend %flexItemsCenter;
         justify-content: center;
         gap: 10px;
         padding: 13px 20px;
@@ -65,13 +65,13 @@
         font-weight: 500;
         font-size: 1.5rem;
         line-height: 146.667%;
-        color: #1A162E;
+        color: var(--text-color);
     }
 
     &__separate {
         width: 1px;
         height: 30px;
-        background: #EDEDF6;
+        background: var(--top-act-separate-bg-color);
     }
 }
 
