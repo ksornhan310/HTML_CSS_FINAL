@@ -12,6 +12,10 @@ html {
     --header-bg-color: #fff;
   }
 }
+html {
+  --dropdown-bg-color: #fff;
+  --dropdown-shadow-color: #C8C8C866;
+}
 
 html.dark {
   --body-bg-color: #292E39;
@@ -21,6 +25,9 @@ html.dark {
   --top-act-bg-color: #292E39;
   --top-act-group-shadow-color: #00000033;
   --top-act-separate-bg-color: #EDEDF6;
+  --dropdown-bg-color: #2e3441;
+  --dropdown-shadow-color: #171C2866;
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(23%) saturate(470%) hue-rotate(182deg) brightness(99%) contrast(94%);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -1161,6 +1168,7 @@ button {
 }
 
 .top-bar {
+  position: relative;
   padding: 30px 0;
 }
 @media (max-width: 575.98px) {
@@ -1191,11 +1199,19 @@ button {
     display: none;
   }
 }
-.navbar__list {
-  gap: 30px;
+.navbar__item:hover .dropdown {
+  display: block;
+}
+.navbar__item:first-child a {
+  padding-left: 0;
+}
+.navbar__item:last-child a {
+  padding-right: 0;
 }
 .navbar__link {
   gap: 6px;
+  height: 50px;
+  padding: 0 15px;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 146.667%;
@@ -1289,6 +1305,28 @@ button {
   .logo__img {
     width: 24px;
   }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  padding-top: 54px;
+}
+.dropdown__inner {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--dropdown-bg-color);
+  box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
+}
+.dropdown__inner::before {
+  content: url("../icons/drop-down-arrow.svg");
+  position: absolute;
+  top: -12px;
+  left: var(--arrow-left-pos);
+  translate: -50%;
+  filter: var(--dropdown-arrow-color);
 }
 
 /*# sourceMappingURL=main.css.map */

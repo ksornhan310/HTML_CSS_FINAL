@@ -14,4 +14,9 @@ html {
     @include abstracts.makeBreakpoint (md) {
         --header-bg-color: #fff;
     }
+
+    // Drop down
+    --dropdown-bg-color: #fff;
+    --dropdown-shadow-color: #C8C8C866;
+
 }
