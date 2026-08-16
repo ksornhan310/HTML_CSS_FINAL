@@ -10,13 +10,15 @@ html {
     --top-act-bg-color: #fff;
     --top-act-group-shadow-color: #EDEDF633;
     --top-act-separate-bg-color: #EDEDF6;
-
-    @include abstracts.makeBreakpoint (md) {
+    
+    @include abstracts.makeBreakpoint (lg) {
         --header-bg-color: #fff;
+        --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 
     // Drop down
     --dropdown-bg-color: #fff;
     --dropdown-shadow-color: #C8C8C866;
-
+    
+    --department-border-color: #D2D1D6;
 }

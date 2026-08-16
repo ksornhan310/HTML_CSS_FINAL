@@ -7,6 +7,10 @@
 
 .header {
     background: var(--header-bg-color);
+
+    @include abstracts.makeBreakpoint (lg) {
+        box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+    }
 }
 
 .top-bar {
@@ -14,7 +18,7 @@
     position: relative;
     padding: 30px 0;
 
-    @include abstracts.makeBreakpoint (sm) {
+    @include abstracts.makeBreakpoint (md) {
         justify-content: space-between;
     }
 
@@ -29,10 +33,10 @@
 
 /* ================ Navbar ================ */
 .navbar {
-    margin-left: 144px;
+    margin-left: 129px;
 
     @include abstracts.makeBreakpoint (xl) {
-        margin-left: 50px;
+        margin-left: 28px;
     }
 
     @include abstracts.makeBreakpoint (lg) {
@@ -46,14 +50,6 @@
     &__item {
         &:hover .dropdown {
             display: block;
-        }
-
-        &:first-child a {
-            padding-left: 0;
-        }
-
-        &:last-child a {
-            padding-right: 0;
         }
     }
 
@@ -79,7 +75,7 @@
     @extend %flexItemsCenter;
     gap: 20px;
 
-    @include abstracts.makeBreakpoint (sm) {
+    @include abstracts.makeBreakpoint (md) {
         margin-left: 0;
     }
 

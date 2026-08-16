@@ -7,14 +7,16 @@ html {
   --top-act-group-shadow-color: #EDEDF633;
   --top-act-separate-bg-color: #EDEDF6;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   html {
     --header-bg-color: #fff;
+    --header-shadow-color: rgba(237, 237, 246, 0.2);
   }
 }
 html {
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: #C8C8C866;
+  --department-border-color: #D2D1D6;
 }
 
 html.dark {
@@ -25,9 +27,18 @@ html.dark {
   --top-act-bg-color: #292E39;
   --top-act-group-shadow-color: #00000033;
   --top-act-separate-bg-color: #EDEDF6;
+}
+@media (max-width: 991.98px) {
+  html.dark {
+    --header-shadow-color: rgba(0, 0, 0, 0.2);
+  }
+}
+html.dark {
   --dropdown-bg-color: #2e3441;
   --dropdown-shadow-color: #171C2866;
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(23%) saturate(470%) hue-rotate(182deg) brightness(99%) contrast(94%);
+  --department-border-color: #171C28;
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1315%) hue-rotate(263deg) brightness(97%) contrast(103%);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -1166,12 +1177,17 @@ button {
 .header {
   background: var(--header-bg-color);
 }
+@media (max-width: 991.98px) {
+  .header {
+    box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+  }
+}
 
 .top-bar {
   position: relative;
   padding: 30px 0;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .top-bar {
     justify-content: space-between;
   }
@@ -1187,11 +1203,11 @@ button {
 
 /* ================ Navbar ================ */
 .navbar {
-  margin-left: 144px;
+  margin-left: 129px;
 }
 @media (max-width: 1199.98px) {
   .navbar {
-    margin-left: 50px;
+    margin-left: 28px;
   }
 }
 @media (max-width: 991.98px) {
@@ -1201,12 +1217,6 @@ button {
 }
 .navbar__item:hover .dropdown {
   display: block;
-}
-.navbar__item:first-child a {
-  padding-left: 0;
-}
-.navbar__item:last-child a {
-  padding-right: 0;
 }
 .navbar__link {
   gap: 6px;
@@ -1225,7 +1235,7 @@ button {
   margin-left: auto;
   gap: 20px;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .top-act {
     margin-left: 0;
   }
@@ -1285,7 +1295,7 @@ button {
     margin-left: 40px;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .logo {
     gap: 10px;
     margin-left: 0;
@@ -1308,14 +1318,17 @@ button {
 }
 
 .dropdown {
-  display: none;
   position: absolute;
   left: 0;
+  width: min(1240px, 100%);
   padding-top: 54px;
 }
 .dropdown__inner {
+  --dropdown-inner-max-height: min(582px, 100vh - 158px);
+  --dropdown-inner-padding: 30px;
   position: relative;
-  padding: 30px;
+  max-height: var(--dropdown-inner-max-height);
+  padding: var(--dropdown-inner-padding);
   border-radius: 20px;
   background: var(--dropdown-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -1327,6 +1340,64 @@ button {
   left: var(--arrow-left-pos);
   translate: -50%;
   filter: var(--dropdown-arrow-color);
+}
+
+.mega-menu {
+  max-height: calc(var(--dropdown-inner-max-height) - var(--dropdown-inner-padding) * 2);
+}
+
+.departments {
+  width: 292px;
+  max-height: inherit;
+  overflow-y: auto;
+  border-right: 1px solid var(--department-border-color);
+}
+
+.menu-column {
+  display: flex;
+  gap: 14px;
+}
+.menu-column__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+.menu-column__icon-1 {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.menu-column__icon-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  filter: var(--menu-column-icon-color);
+}
+.menu-column__content {
+  flex: 1;
+}
+.menu-column__heading {
+  margin-top: 4px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+.menu-column__list {
+  margin-top: 19px;
+}
+.menu-column__link {
+  display: block;
+  padding: 7px 0;
+  font-size: 1.4rem;
+  line-height: 142.86%;
+}
+.menu-column__link:hover {
+  font-weight: 500;
+  color: #0071DC;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,12 +7,21 @@ html.dark {
     --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(342deg) brightness(102%) contrast(102%);
 
     --header-bg-color: #171C28;
+
     --top-act-bg-color: #292E39;
     --top-act-group-shadow-color: #00000033;
     --top-act-separate-bg-color: #EDEDF6;
+
+    @include abstracts.makeBreakpoint (lg) {
+        --header-shadow-color: rgba(0, 0, 0, 0.2);
+    }
 
     // Drop down
     --dropdown-bg-color: #2e3441;
     --dropdown-shadow-color: #171C2866;
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(23%) saturate(470%) hue-rotate(182deg) brightness(99%) contrast(94%);
+
+    --department-border-color: #171C28;
+
+    --menu-column-icon-color: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1315%) hue-rotate(263deg) brightness(97%) contrast(103%);
 }
