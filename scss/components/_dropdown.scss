@@ -1,17 +1,17 @@
+@use "../abstracts";
+
 .dropdown {
     position: absolute;
     left: 0;
 
     width: min(1240px, 100%);
     padding-top: 54px;
-    // display: none;
+    display: none;
 
     &__inner {
-        --dropdown-inner-max-height: min(582px, 100vh - 158px);
         --dropdown-inner-padding: 30px;
         position: relative;
 
-        max-height: var(--dropdown-inner-max-height);
         padding: var(--dropdown-inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
@@ -29,12 +29,14 @@
 }
 
 .mega-menu {
-    max-height: calc(var(--dropdown-inner-max-height) - var(--dropdown-inner-padding) * 2);
+    position: relative;
 }
 
 .departments {
-    width: 292px;
-    max-height: inherit;
+    --departments-width: 292px;
+
+    width: var(--departments-width);
+    height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
     overflow-y: auto;
 
     border-right: 1px solid var(--department-border-color);
@@ -44,18 +46,26 @@
     display: flex;
     gap: 14px;
 
+    &+& {
+        margin-top: 22px;
+    }
+
     &__icon {
         position: relative;
 
         flex-shrink: 0;
         width: 36px;
         height: 36px;
+
+        @include abstracts.makeBreakpoint(xl) {
+            display: none;
+        }
     }
 
     &__icon-1 {
         width: 30px;
         height: 30px;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     &__icon-2 {
@@ -65,7 +75,7 @@
 
         width: 24px;
         height: 24px;
-        object-fit: cover;
+        object-fit: contain;
         filter: var(--menu-column-icon-color);
     }
 
@@ -84,15 +94,31 @@
         margin-top: 19px;
     }
 
+    &__item {
+        &:hover .sub-menu {
+            display: grid;
+        }
+    }
+
+    &__item:hover > &__link {
+        font-weight: 500;
+        color: #0071DC;
+    }
+
     &__link {
         display: block;
         padding: 7px 0;
         font-size: 1.4rem;
         line-height: 142.86%;
-
-        &:hover {
-            font-weight: 500;
-            color: #0071DC;
-        }
     }
+}
+
+.sub-menu {
+    position: absolute;
+    inset: 0 0 0 var(--departments-width);
+
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: var(--dropdown-inner-padding);
+    overflow-y: auto;
 }

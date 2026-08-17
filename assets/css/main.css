@@ -1322,12 +1322,11 @@ button {
   left: 0;
   width: min(1240px, 100%);
   padding-top: 54px;
+  display: none;
 }
 .dropdown__inner {
-  --dropdown-inner-max-height: min(582px, 100vh - 158px);
   --dropdown-inner-padding: 30px;
   position: relative;
-  max-height: var(--dropdown-inner-max-height);
   padding: var(--dropdown-inner-padding);
   border-radius: 20px;
   background: var(--dropdown-bg-color);
@@ -1343,12 +1342,13 @@ button {
 }
 
 .mega-menu {
-  max-height: calc(var(--dropdown-inner-max-height) - var(--dropdown-inner-padding) * 2);
+  position: relative;
 }
 
 .departments {
-  width: 292px;
-  max-height: inherit;
+  --departments-width: 292px;
+  width: var(--departments-width);
+  height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
   overflow-y: auto;
   border-right: 1px solid var(--department-border-color);
 }
@@ -1357,16 +1357,24 @@ button {
   display: flex;
   gap: 14px;
 }
+.menu-column + .menu-column {
+  margin-top: 22px;
+}
 .menu-column__icon {
   position: relative;
   flex-shrink: 0;
   width: 36px;
   height: 36px;
 }
+@media (max-width: 1199.98px) {
+  .menu-column__icon {
+    display: none;
+  }
+}
 .menu-column__icon-1 {
   width: 30px;
   height: 30px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .menu-column__icon-2 {
   position: absolute;
@@ -1374,7 +1382,7 @@ button {
   bottom: 0;
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  object-fit: contain;
   filter: var(--menu-column-icon-color);
 }
 .menu-column__content {
@@ -1389,15 +1397,27 @@ button {
 .menu-column__list {
   margin-top: 19px;
 }
+.menu-column__item:hover .sub-menu {
+  display: grid;
+}
+.menu-column__item:hover > .menu-column__link {
+  font-weight: 500;
+  color: #0071DC;
+}
 .menu-column__link {
   display: block;
   padding: 7px 0;
   font-size: 1.4rem;
   line-height: 142.86%;
 }
-.menu-column__link:hover {
-  font-weight: 500;
-  color: #0071DC;
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--departments-width);
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: var(--dropdown-inner-padding);
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
