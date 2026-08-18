@@ -28,18 +28,18 @@
     }
 }
 
-.mega-menu {
+.top-menu {
     position: relative;
-}
 
-.departments {
-    --departments-width: 292px;
-
-    width: var(--departments-width);
-    height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
-    overflow-y: auto;
-
-    border-right: 1px solid var(--department-border-color);
+    &__main{
+        --departments-width: 292px;
+    
+        width: var(--departments-width);
+        height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
+        overflow-y: auto;
+    
+        border-right: 1px solid var(--department-border-color);
+    }
 }
 
 .menu-column {

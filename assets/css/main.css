@@ -1341,11 +1341,10 @@ button {
   filter: var(--dropdown-arrow-color);
 }
 
-.mega-menu {
+.top-menu {
   position: relative;
 }
-
-.departments {
+.top-menu__main {
   --departments-width: 292px;
   width: var(--departments-width);
   height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
