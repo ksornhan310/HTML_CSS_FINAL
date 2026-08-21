@@ -30,12 +30,13 @@
 
 .top-menu {
     position: relative;
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
 
-    &__main{
+    &__main {
         --departments-width: 292px;
     
         width: var(--departments-width);
-        height: calc(min(582px, 100vh - 158px) - var(--dropdown-inner-padding) * 2);
+        height: var(--max-inner-height);
         overflow-y: auto;
     
         border-right: 1px solid var(--department-border-color);
@@ -122,4 +123,15 @@
     grid-template-columns: repeat(3, 1fr);
     padding-left: var(--dropdown-inner-padding);
     overflow-y: auto;
+
+    &--no-main {
+        position: initial;
+        inset: initial;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+        height: var(--max-inner-height);
+        padding-left: 0;
+    }
 }
