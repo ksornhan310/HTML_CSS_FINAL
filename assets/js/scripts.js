@@ -133,3 +133,33 @@ function handleActiveMenu() {
         dropdown.onmouseleave = () => init();
     });
 }
+
+window.addEventListener("template-loaded", initJsToggle);
+
+function initJsToggle() {
+    $$(".js-toggle").forEach(button => {
+        const target = button.getAttribute("toggle-target");
+        if (!target) {
+            console.error(`Cần thêm toggle-target cho: ${button.outerHTML}`);
+            return;
+        }
+        
+        button.onclick = () => {
+            const navbar = $(target);
+
+            if(!navbar) {
+                console.error(`Không tìm thấy phần tử "${target}"`);
+                return;
+            }
+
+            navbar.classList.toggle("show");
+
+            // const isShow = navbar.classList.contains("show");
+            // if(!isShow) {
+            //     navbar.classList.toggle("show");
+            // } else {
+            //     navbar.classList.toggle("show");
+            // }
+        }
+    })
+}
