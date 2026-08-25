@@ -8,6 +8,12 @@
     padding-top: 54px;
     display: none;
 
+    @include abstracts.makeBreakpoint(lg) {
+        position: initial;
+        padding-top: 0;
+        display: block;
+    }
+
     &__inner {
         --dropdown-inner-padding: 30px;
         position: relative;
@@ -25,6 +31,18 @@
             translate: -50%;
             filter: var(--dropdown-arrow-color);
         }
+
+        @include abstracts.makeBreakpoint(lg) {
+            padding: 0 40px;
+
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            
+            &::before {
+                content: none;
+            }
+        }
     }
 }
 
@@ -40,12 +58,22 @@
         overflow-y: auto;
     
         border-right: 1px solid var(--department-border-color);
+
+        @include abstracts.makeBreakpoint(lg) {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
     }
 }
 
 .menu-column {
     display: flex;
     gap: 14px;
+
+    @include abstracts.makeBreakpoint(lg) {
+        margin-top: 10px;
+    }
 
     &+& {
         margin-top: 22px;
@@ -60,6 +88,10 @@
 
         @include abstracts.makeBreakpoint(xl) {
             display: none;
+        }
+
+        @include abstracts.makeBreakpoint(lg) {
+            display: block;
         }
     }
 
@@ -89,10 +121,18 @@
         font-weight: 500;
         font-size: 1.6rem;
         line-height: 150%;
+
+        @include abstracts.makeBreakpoint(lg) {
+            margin-bottom: 26px;
+        }
     }
 
     &__list {
         margin-top: 19px;
+
+        @include abstracts.makeBreakpoint(lg) {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -123,6 +163,12 @@
     grid-template-columns: repeat(3, 1fr);
     padding-left: var(--dropdown-inner-padding);
     overflow-y: auto;
+
+    @include abstracts.makeBreakpoint(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
 
     &--no-main {
         position: initial;

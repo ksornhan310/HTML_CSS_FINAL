@@ -47,7 +47,7 @@
             translate: 0;
         }
 
-        &.show ~ &__overlay {
+        &.show~&__overlay {
             visibility: visible;
             opacity: 1;
         }
@@ -81,6 +81,8 @@
         @include abstracts.makeBreakpoint (lg) {
             flex-direction: column;
             align-items: flex-start;
+            height: calc(100% - 28px);
+            overflow-y: auto;
         }
     }
 

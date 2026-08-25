@@ -118,12 +118,14 @@ a {
 }
 
 input,
+img,
 button,
 select,
 textarea {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -1330,6 +1332,8 @@ button {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
+    height: calc(100% - 28px);
+    overflow-y: auto;
   }
 }
 .navbar__item:hover .dropdown {
@@ -1454,6 +1458,13 @@ button {
   padding-top: 54px;
   display: none;
 }
+@media (max-width: 991.98px) {
+  .dropdown {
+    position: initial;
+    padding-top: 0;
+    display: block;
+  }
+}
 .dropdown__inner {
   --dropdown-inner-padding: 30px;
   position: relative;
@@ -1470,6 +1481,17 @@ button {
   translate: -50%;
   filter: var(--dropdown-arrow-color);
 }
+@media (max-width: 991.98px) {
+  .dropdown__inner {
+    padding: 0 40px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .dropdown__inner::before {
+    content: none;
+  }
+}
 
 .top-menu {
   position: relative;
@@ -1482,10 +1504,22 @@ button {
   overflow-y: auto;
   border-right: 1px solid var(--department-border-color);
 }
+@media (max-width: 991.98px) {
+  .top-menu__main {
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
+}
 
 .menu-column {
   display: flex;
   gap: 14px;
+}
+@media (max-width: 991.98px) {
+  .menu-column {
+    margin-top: 10px;
+  }
 }
 .menu-column + .menu-column {
   margin-top: 22px;
@@ -1499,6 +1533,11 @@ button {
 @media (max-width: 1199.98px) {
   .menu-column__icon {
     display: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .menu-column__icon {
+    display: block;
   }
 }
 .menu-column__icon-1 {
@@ -1524,8 +1563,18 @@ button {
   font-size: 1.6rem;
   line-height: 150%;
 }
+@media (max-width: 991.98px) {
+  .menu-column__heading {
+    margin-bottom: 26px;
+  }
+}
 .menu-column__list {
   margin-top: 19px;
+}
+@media (max-width: 991.98px) {
+  .menu-column__list {
+    margin-top: 0;
+  }
 }
 .menu-column__item--active .sub-menu {
   display: grid;
@@ -1548,6 +1597,13 @@ button {
   grid-template-columns: repeat(3, 1fr);
   padding-left: var(--dropdown-inner-padding);
   overflow-y: auto;
+}
+@media (max-width: 991.98px) {
+  .sub-menu {
+    position: initial;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
 }
 .sub-menu--no-main {
   position: initial;
