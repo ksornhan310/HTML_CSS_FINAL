@@ -21,14 +21,6 @@
     @include abstracts.makeBreakpoint (md) {
         justify-content: space-between;
     }
-
-    &__more {
-        display: none;
-
-        @include abstracts.makeBreakpoint (lg) {
-            display: block;
-        }
-    }
 }
 
 /* ================ Navbar ================ */
@@ -62,10 +54,8 @@
     }
 
     &__close-btn {
-        display: none;
 
         @include abstracts.makeBreakpoint (lg) {
-            display: block;
             padding: 10px 40px;
         }
     }
@@ -151,12 +141,6 @@
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
 
         @include abstracts.makeBreakpoint (md) {
-            display: none;
-        }
-    }
-
-    &__group--single {
-        @include abstracts.makeBreakpoint (lg) {
             display: none;
         }
     }
