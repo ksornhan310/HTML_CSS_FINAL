@@ -11,7 +11,6 @@
     @include abstracts.makeBreakpoint(lg) {
         position: initial;
         padding-top: 0;
-        display: block;
     }
 
     &__inner {
@@ -42,6 +41,10 @@
             &::before {
                 content: none;
             }
+        }
+
+        @include abstracts.makeBreakpoint(sm) {
+            padding: 0 20px;
         }
     }
 }
@@ -179,5 +182,10 @@
         
         height: var(--max-inner-height);
         padding-left: 0;
+
+        @include abstracts.makeBreakpoint(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }

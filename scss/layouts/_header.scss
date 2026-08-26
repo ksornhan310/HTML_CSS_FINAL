@@ -38,13 +38,15 @@
 
         padding: 20px 0;
         margin-left: 0;
-        background: #fff;
+        background: var(--sidebar-bg-color);
+        border-radius: 0 20px 20px 0;
 
         translate: -100%;
         transition: translate 0.5s;
 
         &.show {
             translate: 0;
+            box-shadow: 0px 40px 90px 20px var(--sidebar-shadow-color);
         }
 
         &.show~&__overlay {
@@ -53,10 +55,18 @@
         }
     }
 
+    @include abstracts.makeBreakpoint (sm) {
+        inset: 0 20% 0 0;
+    }
+
     &__close-btn {
 
         @include abstracts.makeBreakpoint (lg) {
             padding: 10px 40px;
+        }
+
+        @include abstracts.makeBreakpoint (sm) {
+            padding: 0 20px 10px;
         }
     }
 
@@ -81,8 +91,18 @@
         @include abstracts.makeBreakpoint (lg) {
             flex-direction: column;
             align-items: flex-start;
-            height: calc(100% - 28px);
+            
+            height: calc(100% - 40px);
             overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        @include abstracts.makeBreakpoint (md) {
+            height: calc(100% - 130px);
+        }
+
+        @include abstracts.makeBreakpoint (sm) {
+            height: calc(100% - 120px);
         }
     }
 
@@ -92,8 +112,16 @@
         }
 
         @include abstracts.makeBreakpoint (lg) {
+            &:hover .dropdown {
+                display: none;
+            }
+
             width: 100%;
         }
+    }
+
+    &__item--active .dropdown {
+        display: block !important;
     }
 
     &__link {
@@ -112,6 +140,10 @@
             font-size: 1.6rem;
             line-height: 150%;
         }
+
+        @include abstracts.makeBreakpoint (sm) {
+            padding: 0 20px;
+        }
     }
 
     &__arrow {
@@ -120,6 +152,10 @@
         @include abstracts.makeBreakpoint (lg) {
             rotate: -90deg;
         }
+    }
+
+    &__item--active &__arrow {
+        rotate: 0deg;
     }
 }
 
@@ -178,4 +214,27 @@
     height: 50px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.navbar-btn {
+    align-items: center;
+    gap: 16px;
+    height: 50px;
+    padding: 0 40px;
+
+    @include abstracts.makeBreakpoint (sm) {
+        height: 50px;
+        padding: 0 20px;
+    }
+
+    &__title,
+    &__qty {
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 146.667%;
+    }
+
+    &__qty {
+        margin-left: auto;
+    }
 }
