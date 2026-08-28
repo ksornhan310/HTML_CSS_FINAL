@@ -5,11 +5,11 @@
     align-items: center;
     gap: 14px;
 
-    @include abstracts.makeBreakpoint (lg) {
+    @include abstracts.screen (lg) {
         margin-left: 40px;
     }
 
-    @include abstracts.makeBreakpoint (md) {
+    @include abstracts.screen (md) {
         gap: 10px;
         margin-left: 0;
     }
@@ -19,13 +19,13 @@
         font-size: 2.2rem;
         line-height: 145.454%;
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             font-size: 1.8rem;
         }
     }
 
     &__img {
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             width: 24px;
         }
     }

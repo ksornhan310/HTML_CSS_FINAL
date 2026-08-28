@@ -8,7 +8,7 @@
 .header {
     background: var(--header-bg-color);
 
-    @include abstracts.makeBreakpoint (lg) {
+    @include abstracts.screen (lg) {
         box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
     }
 }
@@ -16,9 +16,10 @@
 .top-bar {
     @extend %flexItemsCenter;
     position: relative;
+    z-index: 1;
     padding: 30px 0;
 
-    @include abstracts.makeBreakpoint (md) {
+    @include abstracts.screen (md) {
         justify-content: space-between;
     }
 }
@@ -27,11 +28,11 @@
 .navbar {
     margin-left: 129px;
 
-    @include abstracts.makeBreakpoint (xl) {
+    @include abstracts.screen (xl) {
         margin-left: 28px;
     }
 
-    @include abstracts.makeBreakpoint (lg) {
+    @include abstracts.screen (lg) {
         position: fixed;
         inset: 0 50% 0 0;
         z-index: 9;
@@ -55,17 +56,17 @@
         }
     }
 
-    @include abstracts.makeBreakpoint (sm) {
+    @include abstracts.screen (sm) {
         inset: 0 20% 0 0;
     }
 
     &__close-btn {
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             padding: 10px 40px;
         }
 
-        @include abstracts.makeBreakpoint (sm) {
+        @include abstracts.screen (sm) {
             padding: 0 20px 10px;
         }
     }
@@ -74,7 +75,7 @@
         visibility: hidden;
         opacity: 0;
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.4);
@@ -88,7 +89,7 @@
     &__list {
         @extend %flexItemsCenter;
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             flex-direction: column;
             align-items: flex-start;
 
@@ -97,11 +98,11 @@
             overscroll-behavior: contain;
         }
 
-        @include abstracts.makeBreakpoint (md) {
+        @include abstracts.screen (md) {
             height: calc(100% - 130px);
         }
 
-        @include abstracts.makeBreakpoint (sm) {
+        @include abstracts.screen (sm) {
             height: calc(100% - 120px);
         }
     }
@@ -111,7 +112,7 @@
             display: block;
         }
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             &:hover .dropdown {
                 display: none;
             }
@@ -133,7 +134,7 @@
         font-size: 1.5rem;
         line-height: 146.667%;
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             justify-content: space-between;
             padding: 0 40px;
 
@@ -141,7 +142,7 @@
             line-height: 150%;
         }
 
-        @include abstracts.makeBreakpoint (sm) {
+        @include abstracts.screen (sm) {
             padding: 0 20px;
         }
     }
@@ -149,7 +150,7 @@
     &__arrow {
         margin-top: 4px;
 
-        @include abstracts.makeBreakpoint (lg) {
+        @include abstracts.screen (lg) {
             rotate: -90deg;
         }
     }
@@ -166,7 +167,7 @@
     @extend %flexItemsCenter;
     gap: 20px;
 
-    @include abstracts.makeBreakpoint (md) {
+    @include abstracts.screen (md) {
         margin-left: 0;
     }
 
@@ -178,7 +179,7 @@
         background: var(--top-act-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
 
-        @include abstracts.makeBreakpoint (md) {
+        @include abstracts.screen (md) {
             display: none;
         }
     }
@@ -222,7 +223,7 @@
     height: 50px;
     padding: 0 40px;
 
-    @include abstracts.makeBreakpoint (sm) {
+    @include abstracts.screen (sm) {
         height: 50px;
         padding: 0 20px;
     }

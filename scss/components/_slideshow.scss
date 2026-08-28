@@ -16,7 +16,7 @@
         width: 100%;
         padding-top: 34%;
 
-        @include abstracts.makeBreakpoint(md) {
+        @include abstracts.screen(md) {
             padding-top: 50%;
         }
     }
@@ -43,7 +43,7 @@
 
         width: 20%;
 
-        @include abstracts.makeBreakpoint(md) {
+        @include abstracts.screen(md) {
             column-gap: 20px;
             width: 30%;
         }
@@ -55,7 +55,7 @@
         line-height: 144.445%;
         color: #fff;
 
-        @include abstracts.makeBreakpoint(md) {
+        @include abstracts.screen(md) {
             font-size: 1.4rem;
             line-height: 142.86%;
         }
@@ -79,7 +79,7 @@
             border: 4px solid #fff;
             border-radius: 50%;
 
-            @include abstracts.makeBreakpoint(md) {
+            @include abstracts.screen(md) {
                 border-width: 3px;
             }
         }
