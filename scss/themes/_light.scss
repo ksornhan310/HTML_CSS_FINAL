@@ -33,4 +33,15 @@ html {
     @include abstracts.screen (md) {
         --cate-item-bg-color: #fff;
     }
+
+    // Buttons
+    --filter-btn-color: #6C6C72;
+    --filter-btn-bg-color: #fff;
+    --like-btn-bg-color: #fff;
+    --like-btn-shadow-color: rgba(124, 124, 124, 0.2);
+
+    // Product
+    --product-bg-color: #fff;
+    --product-shadow-color: rgba(237, 237, 246, 0.2);
+    
 }
