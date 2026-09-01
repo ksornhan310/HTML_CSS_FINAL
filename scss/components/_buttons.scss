@@ -27,4 +27,16 @@
     border-radius: 50%;
     background: var(--like-btn-bg-color);
     box-shadow: 0px 20px 60px 6px var(--like-btn-shadow-color);
+
+    &:not(.like-btn--liked) &__icon--liked {
+        display: none;
+    }
+
+    &--liked &__icon {
+        display: none;
+    }
+    
+    &__icon--liked {
+        margin-top: 6px;
+    }
 }

@@ -182,3 +182,23 @@ window.addEventListener("template-loaded", () => {
         }
     });
 });
+
+// Like-btn
+window.addEventListener("template-loaded", () => {
+    
+    // const data = JSON.parse(localStorage.getItem(`product-${index}`));
+
+    // const products = $$(".product-card");
+    
+    const likeButtons = $$(".like-btn");
+    
+    likeButtons.forEach((btn, index) => {
+        
+        btn.onclick = () => {
+            const productCard = btn.closest(".product-card");
+            btn.classList.toggle("like-btn--liked");
+
+            // localStorage.setItem(`product-${index}`, JSON.stringify({product: productCard.dataset.product, like: true}));
+        }
+    })
+})
