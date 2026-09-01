@@ -185,20 +185,20 @@ window.addEventListener("template-loaded", () => {
 
 // Like-btn
 window.addEventListener("template-loaded", () => {
-    
-    // const data = JSON.parse(localStorage.getItem(`product-${index}`));
 
-    // const products = $$(".product-card");
-    
-    const likeButtons = $$(".like-btn");
-    
-    likeButtons.forEach((btn, index) => {
-        
+    $$(".product-card").forEach(productCard => {
+        const data = JSON.parse(localStorage.getItem(`${productCard.dataset.product}`));
+        if (data && data.like) productCard.querySelector(".like-btn").classList.toggle("like-btn--liked");
+    });
+
+    $$(".like-btn").forEach(btn => {
+
         btn.onclick = () => {
             const productCard = btn.closest(".product-card");
             btn.classList.toggle("like-btn--liked");
+            const isLiked = btn.classList.contains("like-btn--liked");
 
-            // localStorage.setItem(`product-${index}`, JSON.stringify({product: productCard.dataset.product, like: true}));
+            localStorage.setItem(`${productCard.dataset.product}`, JSON.stringify({ like: isLiked }));
         }
-    })
-})
+    });
+});
