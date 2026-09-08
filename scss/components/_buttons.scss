@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 // Filter button
 .filter-btn {
     display: flex;
@@ -14,6 +16,14 @@
     font-weight: 700;
     font-size: 1.4rem;
     line-height: 142.86%;
+
+
+    @include abstracts.screen(sm) {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 150%;
+    }
+
 }
 
 // Like button
@@ -71,7 +81,7 @@
     background: #F8F8FB;
     user-select: none;
 
-    & + & {
+    &+& {
         margin-left: 20px;
     }
 
@@ -92,6 +102,7 @@
     }
 
     &--primary {
+        color: #1A162E;
         background: #FFB700;
     }
 

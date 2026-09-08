@@ -141,34 +141,50 @@ function handleActiveMenu() {
     });
 }
 
+/**
+ * JS toggle
+ *
+ * Cách dùng:
+ * <button class="js-toggle" toggle-target="#box">Click</button>
+ * <div id="box">Content show/hide</div>
+ */
 window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
     $$(".js-toggle").forEach(button => {
-        const target = button.getAttribute("toggle-target");
-        if (!target) {
+        const targetId = button.getAttribute("toggle-target");
+        
+        if (!targetId) {
             console.error(`Cần thêm toggle-target cho: ${button.outerHTML}`);
             return;
         }
 
-        button.onclick = () => {
-            const navbar = $(target);
+        button.onclick = (e) => {
+            e.preventDefault();
+            
+            const targetElement = $(targetId);
 
-            if (!navbar) {
-                console.error(`Không tìm thấy phần tử "${target}"`);
+            if (!targetElement) {
+                console.error(`Không tìm thấy phần tử "${targetId}"`);
                 return;
             }
 
-            navbar.classList.toggle("show");
+            targetElement.classList.toggle("show");
+        };
 
-            // const isShow = navbar.classList.contains("show");
-            // if(!isShow) {
-            //     navbar.classList.toggle("show");
-            // } else {
-            //     navbar.classList.toggle("show");
-            // }
+        document.onclick = function (e) {
+            const targetElement = $(targetId);
+            /**
+             * e.target.closest(targetId) -> Kiểm tra click bên trong filter
+             * e.target.closest(".js-toggle") -> Kiểm tra click button filter
+             */
+            if (e.target.closest(targetId) || e.target.closest(".js-toggle")) return;
+
+            if(targetElement.classList.contains("show")) {
+                targetElement.classList.toggle("show");
+            }
         }
-    })
+    });
 }
 
 window.addEventListener("template-loaded", () => {
