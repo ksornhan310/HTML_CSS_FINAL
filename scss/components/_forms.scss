@@ -1,0 +1,54 @@
+.form {
+    &__group {
+        margin-top: 30px;
+
+        &--inline {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__text-input {
+        display: flex;
+        align-items: center;
+
+        height: 50px;
+        padding: 0 12px;
+        border: 1.5px solid #D2D1D6;
+        border-radius: 10px;
+
+        &:focus-within {
+            border-color: #9E9DA8;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        height: 100%;
+
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 144.44%;
+
+        &::placeholder {
+            color: #D2D1D6;
+        }
+
+        &-icon {
+            margin-left: 12px;
+        }
+    }
+
+    &__checkbox {
+        &-label {
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 146.67%;
+            color: #9E9DA8;
+        }
+    }
+
+    &__pull-right {
+        margin-left: auto;
+    }
+}

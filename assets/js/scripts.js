@@ -152,6 +152,7 @@ window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
     $$(".js-toggle").forEach(button => {
+        
         const targetId = button.getAttribute("toggle-target");
         
         if (!targetId) {
