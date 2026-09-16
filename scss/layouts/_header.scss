@@ -22,6 +22,25 @@
     @include abstracts.screen (md) {
         justify-content: space-between;
     }
+
+    &__logo {
+        @include abstracts.screen (lg) {
+            margin-left: 40px;
+
+            &-title {
+                font-size: 1.8rem;
+            }
+
+            &-img {
+                width: 24px;
+            }
+        }
+
+        @include abstracts.screen (md) {
+            gap: 10px;
+            margin-left: 0;
+        }
+    }
 }
 
 /* ================ Navbar ================ */

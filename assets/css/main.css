@@ -161,6 +161,7 @@ input,
 img,
 button,
 select,
+label,
 textarea {
   font-size: inherit;
   font-family: inherit;
@@ -1342,6 +1343,23 @@ ul, ol {
     justify-content: space-between;
   }
 }
+@media (max-width: 991.98px) {
+  .top-bar__logo {
+    margin-left: 40px;
+  }
+  .top-bar__logo-title {
+    font-size: 1.8rem;
+  }
+  .top-bar__logo-img {
+    width: 24px;
+  }
+}
+@media (max-width: 767.98px) {
+  .top-bar__logo {
+    gap: 10px;
+    margin-left: 0;
+  }
+}
 
 /* ================ Navbar ================ */
 .navbar {
@@ -1702,31 +1720,10 @@ ul, ol {
   align-items: center;
   gap: 14px;
 }
-@media (max-width: 991.98px) {
-  .logo {
-    margin-left: 40px;
-  }
-}
-@media (max-width: 767.98px) {
-  .logo {
-    gap: 10px;
-    margin-left: 0;
-  }
-}
 .logo__title {
   font-weight: 700;
   font-size: 2.2rem;
   line-height: 145.454%;
-}
-@media (max-width: 991.98px) {
-  .logo__title {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 991.98px) {
-  .logo__img {
-    width: 24px;
-  }
 }
 
 .dropdown {
@@ -2485,6 +2482,11 @@ ul, ol {
   font-size: 1.8rem;
   line-height: 144.44%;
 }
+@media (max-width: 767.98px) {
+  .form__input {
+    font-size: 1.6rem;
+  }
+}
 .form__input::placeholder {
   color: #D2D1D6;
 }
@@ -2507,6 +2509,11 @@ ul, ol {
   font-size: 1.5rem;
   line-height: 146.67%;
   color: #9E9DA8;
+}
+@media (max-width: 767.98px) {
+  .form__checkbox-label {
+    font-size: 1.4rem;
+  }
 }
 .form__checkbox::before, .form__checkbox::after {
   position: absolute;
@@ -2581,6 +2588,11 @@ ul, ol {
   display: flex;
   min-height: 100vh;
 }
+@supports (-webkit-touch-callout: none) {
+  .auth {
+    min-height: --webkit-fill-available;
+  }
+}
 .auth__intro, .auth__content {
   flex: 1;
 }
@@ -2648,6 +2660,11 @@ ul, ol {
   font-size: 3rem;
   line-height: 146.67%;
 }
+@media (max-width: 767.98px) {
+  .auth__heading {
+    font-size: 2.2rem;
+  }
+}
 .auth__desc {
   margin-top: 10px;
   padding: 0 30px;
@@ -2656,15 +2673,30 @@ ul, ol {
   line-height: 146.67%;
   color: #9E9DA8;
 }
+@media (max-width: 767.98px) {
+  .auth__desc {
+    font-size: 1.4rem;
+  }
+}
 .auth__form {
   margin-top: 30px;
   width: 100%;
+}
+@media (max-width: 767.98px) {
+  .auth__form {
+    margin-top: 0;
+  }
 }
 .auth__link {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 146.67%;
   color: #0071DC;
+}
+@media (max-width: 767.98px) {
+  .auth__link {
+    font-size: 1.4rem;
+  }
 }
 .auth__btn-group {
   margin-top: 50px;
@@ -2677,8 +2709,13 @@ ul, ol {
   font-size: 1.8rem;
   line-height: 144.44%;
 }
-.auth__text .auth__link {
-  font-size: 1.8rem;
+@media (max-width: 767.98px) {
+  .auth__text {
+    font-size: 1.6rem;
+  }
+}
+.auth__text-link {
+  font-size: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */
