@@ -9,6 +9,10 @@
     &__group {
         margin-top: 30px;
 
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
+
         &--inline {
             display: flex;
             align-items: center;
@@ -67,7 +71,7 @@
         }
 
         &::placeholder {
-            color: #D2D1D6;
+            color: var(--form-placeholder-color);
         }
 
         &-icon {
@@ -116,6 +120,7 @@
         }
 
         &::after {
+            display: none;
             top: 7px;
             left: 2px;
 
@@ -131,6 +136,10 @@
         &::before {
             background: #FFB700;
             border-color: #FFB700;
+        }
+
+        &::after {
+            display: block;
         }
     }
 

@@ -54,4 +54,13 @@ html.dark {
     // Footer
     --footer-bg-color: #171C28;
     --footer-text-color: #9e9da6;
+
+    // Auth
+    --auth-content-bg-color: #292E39;
+    --auth-intro-bg-color: #171C28;
+    --auth-intro-text-color: #B9BABE;
+    --auth-heading-color: var(--auth-intro-text-color);
+
+    // Forms
+    --form-placeholder-color: #B9BABE;
 }

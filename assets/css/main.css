@@ -41,6 +41,14 @@ html {
   --footer-bg-color: #eee;
   --auth-content-bg-color: #fff;
 }
+@media (max-width: 767.98px) {
+  html {
+    --auth-intro-bg-color: #fff ;
+  }
+}
+html {
+  --form-placeholder-color: #D2D1D6;
+}
 
 html.dark {
   --body-bg-color: #292E39;
@@ -79,6 +87,11 @@ html.dark {
   --filter-form-tag-bg-color: #171C28;
   --footer-bg-color: #171C28;
   --footer-text-color: #9e9da6;
+  --auth-content-bg-color: #292E39;
+  --auth-intro-bg-color: #171C28;
+  --auth-intro-text-color: #B9BABE;
+  --auth-heading-color: var(--auth-intro-text-color);
+  --form-placeholder-color: #B9BABE;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -2441,6 +2454,11 @@ ul, ol {
 .form__group {
   margin-top: 30px;
 }
+@media (max-width: 767.98px) {
+  .form__group {
+    margin-top: 20px;
+  }
+}
 .form__group--inline {
   display: flex;
   align-items: center;
@@ -2488,7 +2506,7 @@ ul, ol {
   }
 }
 .form__input::placeholder {
-  color: #D2D1D6;
+  color: var(--form-placeholder-color);
 }
 .form__input-icon {
   margin-left: 12px;
@@ -2528,6 +2546,7 @@ ul, ol {
   border-radius: 5px;
 }
 .form__checkbox::after {
+  display: none;
   top: 7px;
   left: 2px;
   width: 15px;
@@ -2539,6 +2558,9 @@ ul, ol {
 .form__checkbox:has(:checked)::before {
   background: #FFB700;
   border-color: #FFB700;
+}
+.form__checkbox:has(:checked)::after {
+  display: block;
 }
 .form__pull-right {
   margin-left: auto;
@@ -2608,6 +2630,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   gap: 50px;
+  background: var(--auth-intro-bg-color);
 }
 .auth__intro-img {
   max-width: 100%;
@@ -2618,6 +2641,7 @@ ul, ol {
   font-size: 1.8rem;
   line-height: 144.44%;
   text-align: center;
+  color: var(--auth-intro-text-color);
 }
 .auth__intro-logo, .auth__intro-next {
   position: absolute;
@@ -2654,20 +2678,27 @@ ul, ol {
   padding: 50px 0;
   text-align: center;
 }
+@media (max-width: 767.98px) {
+  .auth__content-inner {
+    padding: 42px 0;
+  }
+}
 .auth__heading {
   margin-top: 50px;
   font-weight: 500;
   font-size: 3rem;
   line-height: 146.67%;
+  color: var(--auth-heading-color);
 }
 @media (max-width: 767.98px) {
   .auth__heading {
+    margin-top: 40px;
     font-size: 2.2rem;
   }
 }
 .auth__desc {
   margin-top: 10px;
-  padding: 0 30px;
+  padding: 0 20px;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 146.67%;
@@ -2704,6 +2735,12 @@ ul, ol {
   flex-direction: column;
   gap: 30px;
 }
+@media (max-width: 767.98px) {
+  .auth__btn-group {
+    gap: 20px;
+    margin-top: 30px;
+  }
+}
 .auth__text {
   margin-top: 108px;
   font-size: 1.8rem;
@@ -2711,6 +2748,7 @@ ul, ol {
 }
 @media (max-width: 767.98px) {
   .auth__text {
+    margin-top: 50px;
     font-size: 1.6rem;
   }
 }
