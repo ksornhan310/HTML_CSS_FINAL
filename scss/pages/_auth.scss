@@ -29,7 +29,7 @@
         background: var(--auth-intro-bg-color);
 
         &-img {
-            max-width: 100%;
+            width: min(424px, 100%);
         }
 
         &-text {
@@ -56,6 +56,10 @@
         &-next {
             bottom: 50px;
         }
+    }
+
+    &__message {
+        margin-top: 30px;
     }
 
     &__content {
@@ -121,6 +125,11 @@
     &__form {
         margin-top: 30px;
         width: 100%;
+
+        &-reset,
+        &-create {
+            margin-top: 0;
+        }
 
         @include abstracts.screen(md) {
             margin-top: 0;

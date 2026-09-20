@@ -1,0 +1,25 @@
+.message {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    border-radius: 14px;
+
+    &.show {
+        display: block;
+    }
+    
+    &--success {
+        display: none;
+        background: rgba(46, 166, 75, 0.3);
+        border: 1px solid #1d7031;
+    }
+
+    &--failure {
+        display: none;
+        background: rgba(214,49,36, 0.3);
+        border: 1px solid #d63124;
+    }
+}

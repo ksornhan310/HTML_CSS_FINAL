@@ -152,9 +152,9 @@ window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
     $$(".js-toggle").forEach(button => {
-        
+
         const targetId = button.getAttribute("toggle-target");
-        
+
         if (!targetId) {
             console.error(`Cần thêm toggle-target cho: ${button.outerHTML}`);
             return;
@@ -162,7 +162,7 @@ function initJsToggle() {
 
         button.onclick = (e) => {
             e.preventDefault();
-            
+
             const targetElement = $(targetId);
 
             if (!targetElement) {
@@ -181,7 +181,7 @@ function initJsToggle() {
              */
             if (e.target.closest(targetId) || e.target.closest(".js-toggle")) return;
 
-            if(targetElement.classList.contains("show")) {
+            if (targetElement.classList.contains("show")) {
                 targetElement.classList.toggle("show");
             }
         }
@@ -219,3 +219,49 @@ window.addEventListener("template-loaded", () => {
         }
     });
 });
+
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+
+window.addEventListener("template-loaded", () => {
+    const formReset = $("#form-reset");
+    if (!formReset) return;
+
+    const message = $(".message");
+
+    formReset.onclick = (e) => {
+        e.preventDefault();
+
+        const formInput = formReset.querySelector(".form__input");
+        if (formInput.value) {
+            const isValid = validateEmail(formInput.value);
+            if (isValid) {
+                message.classList.add("show");
+            }
+        }
+    }
+});
+
+window.addEventListener("template-loaded", () => {
+    const form = $("#create-password");
+    if (!form) return;
+
+    const message = $(".message");
+
+    form.onsubmit = (e) => {
+        
+        const passwordValue = form.querySelector("#password").value;
+        const confirmValue = form.querySelector("#confirm-password").value;
+        
+        if (passwordValue !== confirmValue) {
+            e.preventDefault();
+            message.classList.add("show");
+        }
+    }
+});
+
