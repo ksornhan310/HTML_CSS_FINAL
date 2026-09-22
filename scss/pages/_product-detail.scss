@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .product-page {
     display: flex;
     flex-direction: column;
@@ -13,9 +15,23 @@
 .prod-preview {
     padding: 0 30px;
 
+    @include abstracts.screen(xl) {
+        padding: 0 10px;
+    }
+
+    @include abstracts.screen(lg) {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0;
+    }
+
     &__list {
         display: flex;
         overflow: hidden;
+
+        @include abstracts.screen(lg) {
+            flex: 1;
+        }
     }
 
     &__item {
@@ -43,6 +59,11 @@
         justify-content: center;
         gap: 16px;
         padding: 30px;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+            padding-left: 0;
+        }
     }
 
     &__thumb-img {
@@ -73,20 +94,44 @@
 
 .prod-info {
     padding: 60px;
-    background: #F6F6F6;
+    background: var(--prod-info-bg-color);
+
+    @include abstracts.screen(xl) {
+        padding: 20px;
+    }
+
+    @include abstracts.screen(lg) {
+        margin-top: 30px;
+    }
 
     &__heading {
         font-weight: 500;
         font-size: 2.6rem;
         line-height: 138.46%;
+
+        @include abstracts.screen(md) {
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 144.44%;
+        }
     }
 
     &__label {
         margin-top: 30px;
     }
 
+    &__select {
+        @include abstracts.screen(md) {
+            font-size: 1.5rem;
+        }
+    }
+
     &__tag {
-        background: #EDEDF6;
+        background: var(--prod-info-tag-bg-color);
+
+        @include abstracts.screen(md) {
+            font-size: 1.5rem;
+        }
     }
 
     &__card {
@@ -133,6 +178,7 @@
 
     &__btn {
         flex: 1;
+        color: var(--prod-info-btn-color);
     }
 
     &__like-btn {
@@ -147,6 +193,18 @@
 
 .prod-properties {
     padding-left: 30px;
+
+    @include abstracts.screen(xl) {
+        padding-left: 10px;
+    }
+
+    @include abstracts.screen(lg) {
+        padding-left: 30px;
+    }
+
+    @include abstracts.screen(md) {
+        padding-left: 0;
+    }
 }
 
 .prod-property {

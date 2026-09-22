@@ -51,6 +51,9 @@ html {
   --product-detail-bg-color: #fff;
   --breadcrumbs-bg-color: #F6F6F6;
   --breadcrumbs-shadow-color: rgba(237, 237, 246, 0.2);
+  --prod-info-bg-color: #F6F6F6;
+  --prod-info-price-color: #000;
+  --prod-info-tag-bg-color: #EDEDF6;
 }
 
 html.dark {
@@ -98,6 +101,10 @@ html.dark {
   --product-detail-bg-color: #292E39;
   --breadcrumbs-bg-color: #171C28;
   --breadcrumbs-shadow-color: rgba(23, 28, 40, 0.2);
+  --prod-info-bg-color: #171C28;
+  --prod-info-price-color: #EEEEEE;
+  --prod-info-tag-bg-color: #292E39;
+  --prod-info-btn-color: #eee;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -2847,9 +2854,26 @@ ul, ol {
 .prod-preview {
   padding: 0 30px;
 }
+@media (max-width: 1199.98px) {
+  .prod-preview {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 991.98px) {
+  .prod-preview {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+  }
+}
 .prod-preview__list {
   display: flex;
   overflow: hidden;
+}
+@media (max-width: 991.98px) {
+  .prod-preview__list {
+    flex: 1;
+  }
 }
 .prod-preview__item {
   position: relative;
@@ -2871,6 +2895,12 @@ ul, ol {
   justify-content: center;
   gap: 16px;
   padding: 30px;
+}
+@media (max-width: 991.98px) {
+  .prod-preview__thumbs {
+    flex-direction: column;
+    padding-left: 0;
+  }
 }
 .prod-preview__thumb-img {
   width: 65px;
@@ -2894,18 +2924,45 @@ ul, ol {
 
 .prod-info {
   padding: 60px;
-  background: #F6F6F6;
+  background: var(--prod-info-bg-color);
+}
+@media (max-width: 1199.98px) {
+  .prod-info {
+    padding: 20px;
+  }
+}
+@media (max-width: 991.98px) {
+  .prod-info {
+    margin-top: 30px;
+  }
 }
 .prod-info__heading {
   font-weight: 500;
   font-size: 2.6rem;
   line-height: 138.46%;
 }
+@media (max-width: 767.98px) {
+  .prod-info__heading {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 144.44%;
+  }
+}
 .prod-info__label {
   margin-top: 30px;
 }
+@media (max-width: 767.98px) {
+  .prod-info__select {
+    font-size: 1.5rem;
+  }
+}
 .prod-info__tag {
-  background: #EDEDF6;
+  background: var(--prod-info-tag-bg-color);
+}
+@media (max-width: 767.98px) {
+  .prod-info__tag {
+    font-size: 1.5rem;
+  }
 }
 .prod-info__card {
   margin-top: 30px;
@@ -2944,6 +3001,7 @@ ul, ol {
 }
 .prod-info__btn {
   flex: 1;
+  color: var(--prod-info-btn-color);
 }
 .prod-info__like-btn {
   width: 46px;
@@ -2956,6 +3014,21 @@ ul, ol {
 
 .prod-properties {
   padding-left: 30px;
+}
+@media (max-width: 1199.98px) {
+  .prod-properties {
+    padding-left: 10px;
+  }
+}
+@media (max-width: 991.98px) {
+  .prod-properties {
+    padding-left: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .prod-properties {
+    padding-left: 0;
+  }
 }
 
 .prod-property {
