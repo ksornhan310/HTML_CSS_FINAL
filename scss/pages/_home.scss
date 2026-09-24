@@ -1,9 +1,10 @@
 @use "../abstracts";
 
 .home {
+    margin-bottom: 40px;
+    
     &__container {
         margin-top: 40px;
-        margin-bottom: 50px;
 
         @include abstracts.screen(md) {
             margin-top: 30px;

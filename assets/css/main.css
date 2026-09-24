@@ -49,11 +49,36 @@ html {
 html {
   --form-placeholder-color: #D2D1D6;
   --product-detail-bg-color: #fff;
+}
+@media (max-width: 767.98px) {
+  html {
+    --product-detail-bg-color: #FAFAFD;
+  }
+}
+html {
   --breadcrumbs-bg-color: #F6F6F6;
   --breadcrumbs-shadow-color: rgba(237, 237, 246, 0.2);
+}
+@media (max-width: 767.98px) {
+  html {
+    --breadcrumbs-bg-color: #fff;
+  }
+}
+html {
+  --prod-info-container-bg-color: #fff;
+  --prod-container-shadow-color: rgba(237, 237, 246, 0.2);
   --prod-info-bg-color: #F6F6F6;
   --prod-info-price-color: #000;
   --prod-info-tag-bg-color: #EDEDF6;
+}
+@media (max-width: 767.98px) {
+  html {
+    --prod-info-bg-color: #fff;
+    --prod-preview-bg-color: #fff ;
+  }
+}
+html {
+  --search-bar-bg-color: #fff;
 }
 
 html.dark {
@@ -101,10 +126,20 @@ html.dark {
   --product-detail-bg-color: #292E39;
   --breadcrumbs-bg-color: #171C28;
   --breadcrumbs-shadow-color: rgba(23, 28, 40, 0.2);
+  --prod-info-container-bg-color: #292E39;
+  --prod-container-shadow-color: rgba(23, 28, 40, 0.2);
   --prod-info-bg-color: #171C28;
   --prod-info-price-color: #EEEEEE;
   --prod-info-tag-bg-color: #292E39;
   --prod-info-btn-color: #eee;
+}
+@media (max-width: 767.98px) {
+  html.dark {
+    --prod-info-container-bg-color: #171C28;
+  }
+}
+html.dark {
+  --search-bar-bg-color: #171C28;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -2623,6 +2658,7 @@ ul, ol {
 @media (max-width: 767.98px) {
   .breadcrumbs {
     gap: 16px;
+    border-radius: 20px;
   }
 }
 .breadcrumbs__link {
@@ -2644,9 +2680,34 @@ ul, ol {
   color: inherit;
 }
 
+.search-bar {
+  align-items: center;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--search-bar-bg-color);
+}
+.search-bar__input {
+  flex: 1;
+  height: 100%;
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 142.86%;
+}
+.search-bar__input::placeholder {
+  font-weight: 400;
+  color: #9E9DA8;
+}
+.search-bar__submit {
+  height: 100%;
+  padding: 0 15px;
+}
+
+.home {
+  margin-bottom: 40px;
+}
 .home__container {
   margin-top: 40px;
-  margin-bottom: 50px;
 }
 @media (max-width: 767.98px) {
   .home__container {
@@ -2844,26 +2905,41 @@ ul, ol {
   display: flex;
   flex-direction: column;
   min-height: 80vh;
+  padding-bottom: 40px;
   background: var(--product-detail-bg-color);
 }
 
 .product-container {
   margin-top: 30px;
 }
+@media (max-width: 767.98px) {
+  .product-container {
+    margin-top: 20px;
+  }
+}
+
+.product-info-container {
+  border-radius: 20px;
+  background: var(--prod-info-container-bg-color);
+}
+@media (max-width: 767.98px) {
+  .product-info-container {
+    box-shadow: 0px 20px 60px 10px var(--prod-info-container-shadow-color);
+  }
+}
 
 .prod-preview {
   padding: 0 30px;
-}
-@media (max-width: 1199.98px) {
-  .prod-preview {
-    padding: 0 10px;
-  }
 }
 @media (max-width: 991.98px) {
   .prod-preview {
     display: flex;
     flex-direction: row-reverse;
-    padding: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .prod-preview {
+    padding: 16px;
   }
 }
 .prod-preview__list {
@@ -2934,6 +3010,13 @@ ul, ol {
 @media (max-width: 991.98px) {
   .prod-info {
     margin-top: 30px;
+  }
+}
+@media (max-width: 767.98px) {
+  .prod-info {
+    margin-top: 0;
+    padding: 0 16px 16px;
+    border-radius: 20px;
   }
 }
 .prod-info__heading {
@@ -3027,6 +3110,7 @@ ul, ol {
 }
 @media (max-width: 767.98px) {
   .prod-properties {
+    margin-top: 40px;
     padding-left: 0;
   }
 }
@@ -3035,6 +3119,11 @@ ul, ol {
   display: flex;
   gap: 16px;
   margin-top: 30px;
+}
+@media (max-width: 767.98px) {
+  .prod-property {
+    margin-top: 20px;
+  }
 }
 .prod-property__title {
   font-weight: 500;

@@ -14,6 +14,7 @@
 
     @include abstracts.screen(md) {
         gap: 16px;
+        border-radius: 20px;
     }
 
     &__link {
@@ -27,7 +28,7 @@
         line-height: 150%;
 
         white-space: nowrap;
-        
+
         @include abstracts.screen(md) {
             font-size: 1.4rem;
         }
@@ -38,5 +39,5 @@
 
     }
 
-    
+
 }

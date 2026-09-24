@@ -72,8 +72,17 @@ html.dark {
     --breadcrumbs-shadow-color: rgba(23, 28, 40, 0.2);
 
     // Product info
+    --prod-info-container-bg-color: #292E39;
+    --prod-container-shadow-color: rgba(23, 28, 40, 0.2);
     --prod-info-bg-color: #171C28;
     --prod-info-price-color: #EEEEEE;
     --prod-info-tag-bg-color: #292E39;
     --prod-info-btn-color: #eee;
+
+    @include abstracts.screen(md) {
+        --prod-info-container-bg-color: #171C28;
+    }
+
+    // Search bar
+    --search-bar-bg-color: #171C28;
 }

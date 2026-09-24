@@ -64,12 +64,31 @@ html {
     // Product detail
     --product-detail-bg-color: #fff;
 
+    @include abstracts.screen(md) {
+        --product-detail-bg-color: #FAFAFD;
+    }
+
     // Breadcrumbs
     --breadcrumbs-bg-color: #F6F6F6;
     --breadcrumbs-shadow-color: rgba(237, 237, 246, 0.2);
+    
+    @include abstracts.screen(md) {
+        --breadcrumbs-bg-color: #fff;
+    }
 
     // Product info
+    --prod-info-container-bg-color: #fff;
+    --prod-container-shadow-color: rgba(237, 237, 246, 0.2);
     --prod-info-bg-color: #F6F6F6;
     --prod-info-price-color: #000;
     --prod-info-tag-bg-color: #EDEDF6;
+
+    @include abstracts.screen(md) {
+        --prod-info-bg-color: #fff;
+        --prod-preview-bg-color: #fff
+    }
+
+    // Search bar
+    --search-bar-bg-color: #fff;
+
 }
