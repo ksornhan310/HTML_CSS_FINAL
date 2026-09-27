@@ -220,6 +220,7 @@ window.addEventListener("template-loaded", () => {
     });
 });
 
+// Validation email
 const validateEmail = (email) => {
     return String(email)
         .toLowerCase()
@@ -228,6 +229,9 @@ const validateEmail = (email) => {
         );
 };
 
+/**
+ * Click button reset -> send message while success or fail
+ */
 window.addEventListener("template-loaded", () => {
     const formReset = $("#form-reset");
     if (!formReset) return;
@@ -247,6 +251,7 @@ window.addEventListener("template-loaded", () => {
     }
 });
 
+// Check new password and confirm it
 window.addEventListener("template-loaded", () => {
     const form = $("#create-password");
     if (!form) return;
@@ -254,14 +259,44 @@ window.addEventListener("template-loaded", () => {
     const message = $(".message");
 
     form.onsubmit = (e) => {
-        
+
         const passwordValue = form.querySelector("#password").value;
         const confirmValue = form.querySelector("#confirm-password").value;
-        
+
         if (passwordValue !== confirmValue) {
             e.preventDefault();
             message.classList.add("show");
         }
     }
+});
+
+/**
+ * Switch tab
+ * Usage:
+ * Thêm class "js-tab" vào tab-container
+ */
+window.addEventListener("template-loaded", () => {
+    const tabSelector = "prod-tab__item";
+    const contentSelector = "prod-tab__content";
+
+    const tabActive = "prod-tab__item--current";
+    const contentActive = "prod-tab__content--current";
+
+    const tabContainers = $$(".js-tab");
+
+    tabContainers.forEach(tabContainer => {
+        const tabs = tabContainer.querySelectorAll(`.${tabSelector}`);
+        const contents = tabContainer.querySelectorAll(`.${contentSelector}`);
+
+        tabs.forEach((tab, index) => {
+            tab.onclick = () => {
+                tabContainer.querySelector(`.${tabActive}`)?.classList.remove(tabActive);
+                tabContainer.querySelector(`.${contentActive}`)?.classList.remove(contentActive);
+
+                tab.classList.add(tabActive);
+                contents[index].classList.add(contentActive);
+            };
+        });
+    });
 });
 
