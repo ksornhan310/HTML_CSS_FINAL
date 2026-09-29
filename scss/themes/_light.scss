@@ -98,4 +98,10 @@ html {
     @include abstracts.screen(md) {
         --review-card-bg-color: #fff;
     }
+
+    // Action dropdown
+    --act-dropdown-bg-color: #fff;
+    --act-dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+    --act-dropdown-bottom-border-color: #D2D1D6;
+    --car-preview-item-border-color: #ebebeb;
 }
