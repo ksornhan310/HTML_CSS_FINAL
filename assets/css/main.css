@@ -1700,8 +1700,9 @@ strong {
 .act-dropdown__bottom {
   margin: 20px 0;
   padding: 20px 0;
-  border-top: 1px solid var(--act-dropdown-bottom-border-color);
-  border-bottom: 1px solid var(--act-dropdown-bottom-border-color);
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--act-dropdown-bottom-border-color);
 }
 .act-dropdown__row {
   display: flex;
@@ -1731,6 +1732,10 @@ strong {
   right: 100px;
   height: 20.5px;
   filter: var(--dropdown-arrow-color);
+}
+.act-dropdown__separate {
+  margin: 20px 0;
+  border: 1px solid var(--act-dropdown-bottom-border-color);
 }
 
 .cart-preview-item {

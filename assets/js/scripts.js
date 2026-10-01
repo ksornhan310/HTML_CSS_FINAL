@@ -151,7 +151,7 @@ function handleActiveMenu() {
 window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
-    $$(".js-toggle").forEach(button => {
+    $$(".js-toggle").forEach((button, index) => {
 
         const targetId = button.getAttribute("toggle-target");
 
@@ -164,6 +164,7 @@ function initJsToggle() {
             e.preventDefault();
 
             const targetElement = $(targetId);
+            console.log(`target button: ${index}`, targetElement);
 
             if (!targetElement) {
                 console.error(`Không tìm thấy phần tử "${targetId}"`);
@@ -172,20 +173,75 @@ function initJsToggle() {
 
             targetElement.classList.toggle("show");
         };
+    });
 
-        document.onclick = function (e) {
+    document.onclick = function (e) {
+        $$(".js-toggle").forEach(button => {
+            const targetId = button.getAttribute("toggle-target");
             const targetElement = $(targetId);
             /**
-             * e.target.closest(targetId) -> Kiểm tra click bên trong filter
+             * e.target.closest(targetId) -> Kiểm tra click bên trong filter -> Dropdown
              * e.target.closest(".js-toggle") -> Kiểm tra click button filter
              */
+
             if (e.target.closest(targetId) || e.target.closest(".js-toggle")) return;
 
             if (targetElement.classList.contains("show")) {
                 targetElement.classList.toggle("show");
             }
+
+        });
+    };
+}
+
+window.addEventListener("template-loaded", exclusiveJsToggle);
+function exclusiveJsToggle() {
+    const buttons = $$(".ex-js-toggle");
+    buttons.forEach(button => {
+
+        const targetId = button.getAttribute("toggle-target");
+
+        if (!targetId) {
+            console.error(`Cần thêm toggle-target cho: ${button.outerHTML}`);
+            return;
         }
+
+        button.onclick = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const targetElement = $(targetId);
+
+            if (!targetElement) {
+                console.error(`Không tìm thấy phần tử "${targetId}"`);
+                return;
+            }
+
+            buttons.forEach(otherButton => {
+                const otherTargetId = otherButton.getAttribute("toggle-target");
+                const otherElement = $(otherTargetId);
+                if (otherElement.classList.contains("show")) otherElement.classList.remove("show");
+            })
+
+            targetElement.classList.toggle("show");
+        };
+
+
     });
+
+    document.onclick = function (e) {
+        $$(".ex-js-toggle").forEach(button => {
+            const targetId = button.getAttribute("toggle-target");
+            const targetElement = $(targetId);
+
+            if (e.target.closest(targetId) || e.target.closest(".ex-js-toggle")) return;
+
+            if (targetElement.classList.contains("show")) {
+                targetElement.classList.toggle("show");
+            }
+
+        });
+    };
 }
 
 window.addEventListener("template-loaded", () => {
