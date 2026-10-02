@@ -18,7 +18,7 @@ html.dark {
 
     // Drop down
     --dropdown-bg-color: #2e3441;
-    --dropdown-shadow-color: #171C2866;
+    --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
     --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(23%) saturate(470%) hue-rotate(182deg) brightness(99%) contrast(94%);
 
     --department-border-color: #171C28;
@@ -101,4 +101,8 @@ html.dark {
     --checkout-cart-info-bg-color: #171C28;
     --checkout-cart-info-shadow-color: rgba(23, 28, 40, 0.2);
     --checkout-border-color: #292E39;
+
+    // Dialog
+    --dialog-content-bg-color: #2e3441;
+    --dialog-content-shadow-color: rgba(23, 28, 40, 0.4);
 }

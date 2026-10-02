@@ -164,7 +164,6 @@ function initJsToggle() {
             e.preventDefault();
 
             const targetElement = $(targetId);
-            console.log(`target button: ${index}`, targetElement);
 
             if (!targetElement) {
                 console.error(`Không tìm thấy phần tử "${targetId}"`);

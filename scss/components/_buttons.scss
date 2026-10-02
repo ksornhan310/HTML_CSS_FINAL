@@ -85,6 +85,7 @@
 
     background: #F8F8FB;
     user-select: none;
+    white-space: nowrap;
 
     + .btn {
         &:not(.btn--no-margin) {
@@ -96,6 +97,12 @@
         opacity: 0.9;
     }
 
+    &--small {
+        height: 40px;
+        padding: 0 16px;
+        font-size: 1.6rem;
+    }
+
     &[disabled],
     &--disabled {
         opacity: 0.5;
@@ -103,7 +110,6 @@
     }
 
     &--text {
-        color: #9E9DA8;
         background: transparent;
         font-weight: 400;
     }
