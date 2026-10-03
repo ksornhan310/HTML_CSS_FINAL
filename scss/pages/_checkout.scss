@@ -30,6 +30,23 @@
         padding: 16px;
     }
 
+    &__heading {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 142%;
+
+        @include abstracts.screen(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__sub-heading {
+        margin: 30px 0;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 144.44%;
+    }
+
     &__bottom {
         margin-top: 30px;
     }
@@ -207,6 +224,10 @@
         font-weight: 500;
         font-size: 1.5rem;
         line-height: 146.67%;
+
+        &-btn {
+            display: flex;
+        }
     }
 
     &__total-price {
@@ -262,5 +283,132 @@
         margin-top: 10px;
         font-size: 1.4rem;
         line-height: 143%;
+    }
+}
+
+.user-address {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+
+        @include abstracts.screen(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__heading {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 144.44%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__desc {
+        margin-top: 4px;
+        font-size: 1.5rem;
+        line-height: 146.67%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.address-card {
+    display: flex;
+    gap: 16px;
+
+    margin-top: 30px;
+
+    @include abstracts.screen(md) {
+        flex-direction: column;
+    }
+
+    &__checkbox {
+        &-input {
+            appearance: none;
+
+            &::before {
+                content: url("../icons/checkbox-unchecked.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
+    }
+
+    &__left {
+        flex: 1;
+
+        display: flex;
+        gap: 16px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 144.44%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__desc {
+        width: min(520px, 90%);
+        margin-top: 4px;
+        font-size: 1.5rem;
+        line-height: 146.67%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        margin-top: 20px;
+        list-style: disc inside;
+
+        font-size: 1.4rem;
+        line-height: 143%;
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        &-item {
+            padding: 0 8px;
+        }
+    }
+
+    &__control {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 1.8rem;
+            line-height: 144.44%;
+        }
     }
 }
