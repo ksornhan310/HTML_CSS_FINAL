@@ -43,12 +43,23 @@ textarea {
 button {
     border: none;
     outline: none;
-    background: transparent;
     cursor: pointer;
 }
 
-input {
+input,
+button,
+textarea {
     background: transparent;
+}
+
+/* Remove background-color default while autocomplete: on */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 1s 9999s;
+    -webkit-text-fill-color: var(--text-color) !important;
+    caret-color: var(--text-color);
 }
 
 .icon {

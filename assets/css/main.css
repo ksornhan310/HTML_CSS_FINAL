@@ -270,12 +270,23 @@ textarea {
 button {
   border: none;
   outline: none;
-  background: transparent;
   cursor: pointer;
 }
 
-input {
+input,
+button,
+textarea {
   background: transparent;
+}
+
+/* Remove background-color default while autocomplete: on */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 1s 9999s;
+  -webkit-text-fill-color: var(--text-color) !important;
+  caret-color: var(--text-color);
 }
 
 .icon {
@@ -2607,6 +2618,24 @@ strong {
   opacity: 0.5;
   pointer-events: none;
 }
+.form__row {
+  display: flex;
+  gap: 30px;
+}
+.form__row > * {
+  flex: 1;
+}
+@media (max-width: 767.98px) {
+  .form__row {
+    gap: 20px;
+  }
+}
+@media (max-width: 575.98px) {
+  .form__row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .form__group {
   margin-top: 30px;
 }
@@ -2630,13 +2659,17 @@ strong {
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error {
   display: block;
 }
-.form__text-input {
+.form__text-area, .form__text-input {
   display: flex;
   align-items: center;
   height: 50px;
   padding: 0 12px;
   border: 1.5px solid #D2D1D6;
   border-radius: 10px;
+}
+.form__text-area {
+  height: 100px;
+  padding: 12px;
 }
 .form__text-input:focus-within {
   border-color: #9E9DA8;
@@ -2649,12 +2682,19 @@ strong {
   color: red;
   font-weight: 500;
 }
-.form__input {
+.form__text-area-input, .form__input {
   flex: 1;
+  width: 100%;
   height: 100%;
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 144.44%;
+}
+.form__text-area-input {
+  resize: none;
+}
+.form__text-area-input::placeholder {
+  color: var(--form-placeholder-color);
 }
 @media (max-width: 767.98px) {
   .form__input {
@@ -3024,12 +3064,12 @@ strong {
   text-align: left;
 }
 
-.dialog__overlay, .dialog {
+.modal__overlay, .modal {
   position: fixed;
   inset: 0;
 }
 
-.dialog {
+.modal {
   z-index: 99;
   display: flex;
   align-items: center;
@@ -3039,47 +3079,73 @@ strong {
   transition: opacity, visibility;
   transition-duration: 0.3s;
 }
-.dialog.show {
+.modal__body {
+  max-height: calc(100vh - 180px);
+  padding-right: 20px;
+  overflow-y: auto;
+}
+.modal.show {
   opacity: 1;
   visibility: visible;
 }
-.dialog__overlay {
+.modal__overlay {
   background: rgba(0, 0, 0, 0.4);
 }
-.dialog.show .dialog__content {
+.modal.show .modal__content {
   transform: scale(1);
 }
-.dialog__content {
+.modal__heading {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 142%;
+}
+.modal--small {
+  --width: 450px;
+}
+.modal--large {
+  --width: 1100px;
+}
+.modal__content {
   position: relative;
   z-index: 1;
-  max-width: min(450px, 100% - 40px);
-  padding: 30px;
+  width: min(var(--width, 700px), 100% - 40px);
+  padding: 30px 10px 30px 30px;
   border-radius: 20px;
   background: var(--dialog-content-bg-color);
   box-shadow: 0px 20px 60px 10px var(--dialog-content-shadow-color);
   transform: scale(0);
   transition: transform 0.3s;
 }
-.dialog__text {
+@media (max-width: 575.98px) {
+  .modal__content {
+    padding: 20px 0 20px 20px;
+  }
+}
+.modal__text {
   font-size: 1.8rem;
   line-height: 1.5;
 }
-.dialog__bottom {
+.modal__bottom {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 30px;
+  padding-right: 20px;
 }
 @media (max-width: 767.98px) {
-  .dialog__content {
-    padding: 16px;
-  }
-  .dialog__bottom {
+  .modal__bottom {
     gap: 10px;
   }
-  .dialog__btn {
+}
+@media (max-width: 575.98px) {
+  .modal__bottom {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .modal__btn {
     flex: 1;
   }
 }
