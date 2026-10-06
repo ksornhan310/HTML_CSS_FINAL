@@ -103,7 +103,7 @@
                                                     <img src="./assets/icons/heart-2.svg" alt="">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__control-btn js-toggle" toggle-target="#delete-dialog">
+                                                <button class="cart-item__control-btn js-toggle" toggle-target="#delete-confirm">
                                                     <img src="./assets/icons/trashbin.svg" alt="">
                                                     Delete
                                                 </button>
@@ -151,7 +151,7 @@
                                                     <img src="./assets/icons/heart-2.svg" alt="">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__control-btn js-toggle" toggle-target="#delete-dialog">
+                                                <button class="cart-item__control-btn js-toggle" toggle-target="#delete-confirm">
                                                     <img src="./assets/icons/trashbin.svg" alt="">
                                                     Delete
                                                 </button>
@@ -199,7 +199,7 @@
                                                     <img src="./assets/icons/heart-2.svg" alt="">
                                                     Save
                                                 </button>
-                                                <button class="cart-item__control-btn js-toggle" toggle-target="#delete-dialog">
+                                                <button class="cart-item__control-btn js-toggle" toggle-target="#delete-confirm">
                                                     <img src="./assets/icons/trashbin.svg" alt="">
                                                     Delete
                                                 </button>
@@ -289,16 +289,16 @@
         load("#footer", "./templates/footer.html");
     </script>
 
-    <!-- Dialog -->
-    <div class="dialog" id="delete-dialog">
-        <div class="dialog__content">
-            <p class="dialog__text">Lorem ipsum dolor sit amet consectetur?</p>
-            <div class="dialog__bottom">
-                <button class="btn btn--small btn--text dialog__btn js-toggle" toggle-target="#delete-dialog">Cancel</button>
-                <button class="btn btn--small btn--primary btn--no-margin dialog__btn js-toggle" toggle-target="#delete-dialog">Confirm</button>
+    <!-- Modal -->
+    <div class="modal" id="delete-confirm">
+        <div class="modal__content">
+            <p class="modal__text">Lorem ipsum dolor sit amet consectetur?</p>
+            <div class="modal__bottom">
+                <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#delete-confirm">Cancel</button>
+                <button class="btn btn--small btn--primary btn--no-margin modal__btn js-toggle" toggle-target="#delete-confirm">Confirm</button>
             </div>
         </div>
-        <div class="dialog__overlay js-toggle" toggle-target="#delete-dialog"></div>
+        <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
     </div>
 
 </body>

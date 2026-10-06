@@ -30,6 +30,22 @@
         padding: 16px;
     }
 
+    &__form {
+        margin-bottom: 30px;
+
+        &-label {
+            @include abstracts.screen(md) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
     &__heading {
         font-weight: 700;
         font-size: 2.4rem;
@@ -38,6 +54,20 @@
         @include abstracts.screen(md) {
             font-size: 2rem;
         }
+
+        &--lv2 {
+            width: min(615px, 100%);
+            font-weight: 500;
+            font-size: 2.2rem;
+
+            @include abstracts.screen(lg) {
+                font-size: 2rem;
+            }
+
+            @include abstracts.screen(md) {
+                font-size: 1.6rem;
+            }
+        }
     }
 
     &__sub-heading {
@@ -45,6 +75,16 @@
         font-weight: 500;
         font-size: 1.8rem;
         line-height: 144.44%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__desc {
+        margin-top: 6px;
+        font-size: 1.5rem;
+        line-height: 146.67%;
     }
 
     &__bottom {
@@ -77,6 +117,10 @@
         font-weight: 500;
         font-size: 1.8rem;
         line-height: 144.44%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.5rem;
+        }
     }
 
     &__row {
@@ -103,10 +147,41 @@
     &__next-btn {
         margin-top: 30px;
     }
+
+    &__edit-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-size: 1.8rem;
+        line-height: 144.44%;
+    }
+
+    &__checkbox {
+        &-input {
+            appearance: none;
+
+            &::before {
+                content: url("../icons/checkbox-unchecked.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
+    }
 }
 
 .cart-info+.cart-info {
     margin-top: 30px;
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 }
 
 .cart-item {
@@ -330,24 +405,6 @@
         flex-direction: column;
     }
 
-    &__checkbox {
-        &-input {
-            appearance: none;
-
-            &::before {
-                content: url("../icons/checkbox-unchecked.svg");
-            }
-
-            &:not(:checked)::before {
-                filter: var(--icon-color);
-            }
-
-            &:checked::before {
-                content: url("../icons/checkbox-checked.svg");
-            }
-        }
-    }
-
     &__left {
         flex: 1;
 
@@ -401,14 +458,112 @@
         display: flex;
         align-items: flex-end;
         height: 100%;
+    }
+}
 
-        &-btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
-            font-size: 1.8rem;
-            line-height: 144.44%;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--payment-item-bg-color);
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+        gap: 16px;
+    }
+
+    @include abstracts.screen(md) {
+        align-items: flex-start;
+    }
+
+    &--pointer {
+        cursor: pointer;
+    }
+
+    &__thumb {
+        width: 70px;
+        height: 50px;
+        object-fit: cover;
+
+        // @include abstracts.screen(md) {
+        //     width: 60px;
+        //     height: 40px;
+        // }
+
+        @include abstracts.screen(sm) {
+            width: 60px;
+            height: 40px;
         }
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+    }
+
+    &__info {
+        flex: 1;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 144.44%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__desc,
+    &__view-detail {
+        font-size: 1.5rem;
+        line-height: 146.67%;
+    }
+
+    &__desc {
+        margin-top: 4px;
+        color: #9E9DA8;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__view-detail {
+        margin-right: -10px;
+        padding: 10px;
+        text-decoration: underline;
+        color: #0071DC;
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 14px;
+    }
+
+    &__cost {
+        font-size: 1.8rem;
+        line-height: 144.44%;
+        color: #9E9DA8;
+    }
+
+    &__checkbox-input:checked+&__cost {
+        font-weight: 500;
+        color: inherit;
     }
 }

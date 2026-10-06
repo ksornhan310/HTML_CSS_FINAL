@@ -56,7 +56,7 @@
         position: relative;
         z-index: 1;
 
-        width: min(var(--width, 700px), 100% - 40px);
+        width: min(var(--width, 800px), 100% - 40px);
         padding: 30px 10px 30px 30px;
         border-radius: 20px;
         background: var(--dialog-content-bg-color);

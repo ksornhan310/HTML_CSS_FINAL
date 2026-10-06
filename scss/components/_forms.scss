@@ -194,10 +194,12 @@
 
         &--small {
             margin-bottom: 10px;
-
-            font-weight: 500;
             font-size: 1.4rem;
-            line-height: 142.86%;
+        }
+
+        &--medium {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
     }
 
@@ -259,5 +261,12 @@
         &:hover {
             color: inherit;
         }
+    }
+
+    &__separate {
+        width: 1px;
+        height: 100%;
+        margin: 0 12px;
+        background: #D2D1D6;
     }
 }

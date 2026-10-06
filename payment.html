@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Grocery Mart</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./assets/font/stylesheet.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+    <!-- Scripts -->
+    <script src="./assets/js/scripts.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header" class="header"></header>
+    <script>
+        load("#header", "./templates/header-loggedin.html");
+    </script>
+
+    <!-- Main -->
+    <main class="checkout-page">
+        <div class="container">
+            <!-- Search bar -->
+            <div class="checkout-container">
+                <div class="search-bar d-none d-md-flex">
+                    <input type="text" name="" placeholder="Search for item" id="" class="search-bar__input">
+                    <button class="search-bar__submit">
+                        <img src="./assets/icons/search.svg" alt="" class="search-bar__icon icon">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Breadcrumbs -->
+            <div class="checkout-container">
+                <ul class="breadcrumbs checkout-page__breadcrumbs">
+                    <li class="breadcrumbs__item">
+                        <a href="./" class="breadcrumbs__link">
+                            Home
+                            <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumbs__icon">
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="./checkout.html" class="breadcrumbs__link">
+                            Checkout
+                            <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumbs__icon">
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="./shipping.html" class="breadcrumbs__link">
+                            Shipping
+                            <img src="./assets/icons/arrow-right.svg" alt="" class="breadcrumbs__icon">
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">Payment method</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Checkout content -->
+            <div class="checkout-container">
+                <div class="row gy-xl-3">
+                    <div class="col-8 col-lg-12">
+                        <div class="cart-info">
+                            <div class="cart-info__top">
+                                <h2 class="cart-info__heading cart-info__heading--lv2">
+                                    1. Shipping, arrives between Mon, May 16—Tue, May 24
+                                </h2>
+                                <a class="cart-info__edit-btn" href="./shipping.html">
+                                    <img src="./assets/icons/edit.svg" alt="" class="icon">
+                                    Edit
+                                </a>
+                            </div>
+
+                            <!-- Payment item 1 -->
+                            <article class="payment-item">
+                                <div class="payment-item__info">
+                                    <h3 class="payment-item__title">Imran Khan</h3>
+                                    <p class="payment-item__desc">Museum of Rajas, Sylhet Sadar, Sylhet 3100.</p>
+                                </div>
+                            </article>
+
+                            <!-- Payment item 2 -->
+                            <article class="payment-item">
+                                <div class="payment-item__info">
+                                    <h3 class="payment-item__title">Items details</h3>
+                                    <p class="payment-item__desc">2 items</p>
+                                </div>
+                                <a href="./shipping.html" class="payment-item__view-detail">View details</a>
+                            </article>
+                        </div>
+                        <div class="cart-info">
+                            <h2 class="cart-info__heading cart-info__heading--lv2">
+                                2. Shipping method
+                            </h2>
+                            <div class="cart-info__separate"></div>
+                            <h3 class="cart-info__sub-heading">Available Shipping method</h3>
+
+                            <!-- Payment item 3 -->
+                            <label>
+                                <article class="payment-item payment-item--pointer">
+                                    <img src="./assets/images/delivery/delivery-1.png" alt=""
+                                        class="payment-item__thumb">
+                                    <div class="payment-item__content">
+                                        <div class="payment-item__info">
+                                            <h3 class="payment-item__title">Fedex Delivery</h3>
+                                            <p class="payment-item__desc">Delivery: 2-3 days work</p>
+                                        </div>
+                                        <span class="cart-info__checkbox payment-item__checkbox">
+                                            <input type="radio" name="delivery-unit"
+                                                class="cart-info__checkbox-input payment-item__checkbox-input">
+                                            <span class="payment-item__cost">Free</span>
+                                        </span>
+                                    </div>
+                                </article>
+                            </label>
+
+                            <!-- Payment item 4 -->
+                            <label>
+                                <article class="payment-item payment-item--pointer">
+                                    <img src="./assets/images/delivery/delivery-2.png" alt=""
+                                        class="payment-item__thumb">
+                                    <div class="payment-item__content">
+                                        <div class="payment-item__info">
+                                            <h3 class="payment-item__title">DHL Delivery</h3>
+                                            <p class="payment-item__desc">Delivery: 2-3 days work</p>
+                                        </div>
+                                        <span class="cart-info__checkbox payment-item__checkbox">
+                                            <input type="radio" name="delivery-unit"
+                                                class="cart-info__checkbox-input payment-item__checkbox-input">
+                                            <span class="payment-item__cost">$12.00</span>
+                                        </span>
+                                    </div>
+                                </article>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-4 col-lg-12">
+                        <div class="cart-info">
+                            <h2 class="cart-info__heading cart-info__heading--lv2">
+                                Payment Details
+                            </h2>
+                            <p class="cart-info__desc">Complete your purchase item by providing your payment details
+                                order.</p>
+                            <form action="" class="form cart-info__form">
+                                <div class="form__group">
+                                    <label for="email"
+                                        class="form__label form__label--medium cart-info__form-label">Email
+                                        Address</label>
+                                    <div class="form__text-input">
+                                        <input type="email" name="email" id="email" placeholder="example@gmail.com"
+                                            class="form__input" required>
+                                        <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                                    </div>
+                                    <p class="form__error">Email chưa đúng định dạng</p>
+                                </div>
+
+                                <div class="form__group">
+                                    <label for="card-name"
+                                        class="form__label form__label--medium cart-info__form-label">Card
+                                        Holder</label>
+                                    <div class="form__text-input">
+                                        <input type="text" name="card-name" id="card-name" placeholder="Name on card"
+                                            class="form__input" required minlength="2">
+                                        <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                                    </div>
+                                    <p class="form__error">Card name chưa đúng định dạng</p>
+                                </div>
+
+                                <div class="form__group">
+                                    <label for="card-number"
+                                        class="form__label form__label--medium cart-info__form-label">Card
+                                        Details</label>
+                                    <div class="form__text-input">
+                                        <input type="text" name="card-number" id="card-number" placeholder="Card number"
+                                            class="form__input" required minlength="12">
+                                        <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                                    </div>
+                                    <p class="form__error">Card number chưa đúng định dạng</p>
+                                </div>
+
+                                <div class="form__group">
+                                    <div class="form__text-input">
+                                        <input type="text" name="card-expire" id="card-expire" placeholder="MM/YY"
+                                            class="form__input" required minlength="12">
+                                        <div class="form__separate"></div>
+                                        <input type="text" name="card-cvc" id="card-cvc" placeholder="CVC"
+                                            class="form__input" required minlength="12">
+                                    </div>
+                                    <p class="form__error">Card number chưa đúng định dạng</p>
+                                </div>
+                            </form>
+                            <div class="cart-info__row">
+                                <span>Subtotal <span class="cart-info__sub-label">(items)</span></span>
+                                <span>3</span>
+                            </div>
+                            <div class="cart-info__row">
+                                <span>Price <span class="cart-info__sub-label">(total)</span></span>
+                                <span>$191.65</span>
+                            </div>
+                            <div class="cart-info__row">
+                                <span>Shipping</span>
+                                <span>$10.00</span>
+                            </div>
+                            <div class="cart-info__separate"></div>
+                            <div class="cart-info__row">
+                                <span>Estimated Total</span>
+                                <span>$201.65</span>
+                            </div>
+                            <a href="#!" class="cart-info__next-btn btn btn--primary btn--rounded">Pay $465.98</a>
+                        </div>
+
+                        <!-- Gift -->
+                        <div class="cart-info">
+                            <a href="#!">
+                                <article class="gift-item">
+                                    <div class="gift-item__icon-wrap">
+                                        <img src="./assets/icons/gift.svg" alt="" class="gift-item__icon">
+                                    </div>
+                                    <div class="gift-item__content">
+                                        <h3 class="gift-item__title">Send this order as a gift.</h3>
+                                        <p class="gift-item__desc">Available items will be shipped to your gift
+                                            recipient.
+                                        </p>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+    <script>
+        load("#footer", "./templates/footer.html");
+    </script>
+
+    <!-- Modal: confirm remove shopping cart item -->
+    <div class="modal modal--small" id="delete-confirm">
+        <div class="modal__content">
+            <p class="modal__text">Lorem ipsum dolor sit amet consectetur?</p>
+            <div class="modal__bottom">
+                <button class="btn btn--small btn--text modal__btn js-toggle"
+                    toggle-target="#delete-confirm">Cancel</button>
+                <button class="btn btn--small btn--primary btn--no-margin modal__btn js-toggle"
+                    toggle-target="#delete-confirm">Confirm</button>
+            </div>
+        </div>
+        <div class="modal__overlay js-toggle" toggle-target="#delete-confirm"></div>
+    </div>
+
+    <!-- Modal: form add new address -->
+    <div class="modal" id="add-new-address" style="--width: 650px">
+        <div class="modal__content">
+            <h2 class="modal__heading">Add new shipping address</h2>
+            <form action="" class="form">
+                <div class="modal__body">
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="name" class="form__label form__label--small">Name</label>
+                            <div class="form__text-input">
+                                <input type="text" name="name" id="name" placeholder="Name" class="form__input" required
+                                    minlength="2">
+                                <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                            </div>
+                            <p class="form__error">Tên chưa đúng định dạng</p>
+                        </div>
+                        <div class="form__group">
+                            <label for="phone" class="form__label form__label--small">Phone</label>
+                            <div class="form__text-input">
+                                <input type="tel" name="phone" id="phone" placeholder="Phone" class="form__input"
+                                    required minlength="10">
+                                <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                            </div>
+                            <p class="form__error">Số điện thoại chưa đúng định dạng</p>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label for="address" class="form__label form__label--small">Address</label>
+                        <div class="form__text-area">
+                            <textarea name="address" id="address" placeholder="Address(Area and street)"
+                                class="form__text-area-input" required></textarea>
+                            <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                        </div>
+                        <p class="form__error">Địa chỉ không được để trống</p>
+                    </div>
+                    <div class="form__group">
+                        <label for="city" class="form__label form__label--small">City</label>
+                        <div class="form__text-input">
+                            <input type="text" name="" id="city" placeholder="City/District/Town" class="form__input"
+                                required>
+                            <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon--error">
+                        </div>
+                        <p class="form__error">Trường này không được bỏ trống</p>
+                    </div>
+                    <div class="form__group form__group--inline">
+                        <label class="form__checkbox">
+                            <input type="checkbox" name="" id="" class="form__checkbox-input" hidden>
+                            <span class="form__checkbox-label">Set as default card</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal__bottom">
+                    <button class="btn btn--small btn--text modal__btn js-toggle"
+                        toggle-target="#add-new-address">Cancel</button>
+                    <button class="btn btn--small btn--primary btn--no-margin modal__btn">Create</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal__overlay"></div>
+    </div>
+
+</body>
+
+</html>
