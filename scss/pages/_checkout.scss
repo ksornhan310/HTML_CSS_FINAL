@@ -46,6 +46,12 @@
         gap: 20px;
     }
 
+    &__back-arrow {
+        position: relative;
+        top: 4px;
+        padding-right: 10px;
+    }
+
     &__heading {
         font-weight: 700;
         font-size: 2.4rem;
@@ -53,6 +59,10 @@
 
         @include abstracts.screen(md) {
             font-size: 2rem;
+        }
+
+        @include abstracts.screen(sm) {
+            font-size: 1.8rem;
         }
 
         &--lv2 {

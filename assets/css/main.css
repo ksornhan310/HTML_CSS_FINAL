@@ -3878,6 +3878,11 @@ strong {
   justify-content: space-between;
   gap: 20px;
 }
+.cart-info__back-arrow {
+  position: relative;
+  top: 4px;
+  padding-right: 10px;
+}
 .cart-info__heading {
   font-weight: 700;
   font-size: 2.4rem;
@@ -3886,6 +3891,11 @@ strong {
 @media (max-width: 767.98px) {
   .cart-info__heading {
     font-size: 2rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .cart-info__heading {
+    font-size: 1.8rem;
   }
 }
 .cart-info__heading--lv2 {
@@ -4471,6 +4481,25 @@ strong {
 }
 .profile__payment-desc {
   margin-bottom: 16px;
+}
+
+.form-card__label {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 144.44%;
+}
+@media (max-width: 575.98px) {
+  .form-card__label {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+  }
+}
+.form-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
