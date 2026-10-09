@@ -1,0 +1,110 @@
+.payment-card {
+    position: relative;
+
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--payment-card-bg-color);
+    color: #fff;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    &__type {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 142.86%;
+    }
+
+    &__number {
+        position: relative;
+        z-index: 1;
+        margin-top: 37px;
+
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 144.44%;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    &__expired {
+        margin: 0 auto 0 40px;
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 0.8rem;
+        line-height: 175%;
+    }
+
+    &__value {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 175%;
+    }
+
+    &__circle {
+        --circle-width: 28px;
+
+        position: relative;
+        
+        width: 42px;
+        height: 28px;
+
+        &::before,
+        &::after {
+            position: absolute;
+            top: 0;
+
+            content: "";
+            width: var(--circle-width);
+            height: var(--circle-width);
+            border-radius: 50%;
+        }
+
+        &::before {
+            left: 0;
+            background: #F94545;
+            mix-blend-mode: hard-light;
+        }
+
+        &::after {
+            right: 0;
+            background: #FFB700;
+        }
+    }
+}
+
+.new-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+
+    height: 100%;
+    min-height: 170px;
+
+    border: 2px dashed #D2D1D6;
+    border-radius: 10px;
+
+    &__text {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 142.86%;
+    }
+}

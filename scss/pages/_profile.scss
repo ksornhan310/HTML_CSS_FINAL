@@ -1,0 +1,103 @@
+@use "../abstracts";
+
+.profile {
+    margin-bottom: 50px;
+
+    &-container {
+        margin-top: 30px;
+    }
+
+    &__sidebar {
+        padding-bottom: 30px;
+        border-radius: 20px;
+        background: var(--profile-sidebar-bg-color);
+        box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow-color);
+        overflow: hidden;
+    }
+
+    // User
+    &-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px 20px;
+        background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1A162E 100%),
+            url("../images/profile/cover.png") no-repeat center / cover;
+        box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow-color);
+        color: #fff;
+
+        &__avatar {
+            width: 121px;
+            height: 121px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            object-fit: cover;
+            background: #ccc;
+            background-clip: content-box;
+            box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        &__name {
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 144.44%;
+        }
+
+        &__desc {
+            margin-top: 2px;
+            font-weight: 500;
+            font-size: 1.5rem;
+            line-height: 146.67%;
+        }
+    }
+
+    &-menu {
+        margin-top: 30px;
+        padding: 0 30px;
+
+        @include abstracts.screen(xxl) {
+            padding: 0 12px;
+        }
+
+        &__title {
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 144.44%;
+        }
+
+        &__list {
+            margin-top: 11px;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            height: 32px;
+            padding: 0 5px;
+            border-radius: 5px;
+
+            font-size: 1.5rem;
+            line-height: 146.67%;
+
+            &:hover {
+                background: var(--profile-menu-link-hover-color);
+            }
+        }
+
+        &__icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 100%;
+        }
+    }
+
+    // Payment
+    &__payment-desc {
+        margin-bottom: 16px;
+    }
+}

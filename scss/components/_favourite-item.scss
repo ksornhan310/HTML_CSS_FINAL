@@ -1,0 +1,43 @@
+@use "../abstracts";
+
+.favourite-item {
+    display: flex;
+    gap: 20px;
+
+    &__thumb {
+        width: 110px;
+        object-fit: contain;
+
+        @include abstracts.screen(lg) {
+            width: 80px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 146.67%;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px;
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 2.2rem;
+        line-height: 145%;
+
+        @include abstracts.screen(sm) {
+            font-size: 1.8rem;
+        }
+    }
+}
