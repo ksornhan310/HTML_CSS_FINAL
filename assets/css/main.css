@@ -104,6 +104,9 @@ html {
   --profile-menu-link-hover-color: #ebebeb;
   --account-info-bg-color: #f6f6f6;
   --profile-info-icon-bg-color: #fff;
+  --user-menu-link-color: #666;
+  --user-menu-icon-color: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(3%) hue-rotate(314deg) brightness(96%) contrast(87%);
+  --user-menu-icon-hover-color: brightness(0) saturate(100%) invert(7%) sepia(36%) saturate(1091%) hue-rotate(210deg) brightness(101%) contrast(96%);
 }
 
 html.dark {
@@ -183,6 +186,9 @@ html.dark {
   --profile-menu-link-hover-color: #292E39;
   --account-info-bg-color: #292E39;
   --profile-info-icon-bg-color: #171C28;
+  --user-menu-link-color: #fff;
+  --user-menu-icon-color: brightness(0) saturate(100%) invert(47%) sepia(0%) saturate(4659%) hue-rotate(78deg) brightness(85%) contrast(95%);
+  --user-menu-icon-hover-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(136deg) brightness(104%) contrast(101%);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -1672,13 +1678,61 @@ strong {
   height: 30px;
   background: var(--top-act-separate-bg-color);
 }
-
+.top-act__user {
+  position: relative;
+}
+.top-act__user:hover .act-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
 .top-act__avatar {
   display: block;
   width: 50px;
   height: 50px;
   border-radius: 8px;
   cursor: pointer;
+}
+.top-act__dropdown {
+  right: 0 !important;
+  width: min(230px, 100vw) !important;
+}
+
+.user-menu__top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-menu__name {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.user-menu__list {
+  margin-top: 30px;
+}
+.user-menu__separate {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ebebeb;
+}
+.user-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-radius: 8px;
+  color: #666;
+}
+.user-menu__link:hover {
+  color: inherit;
+}
+.user-menu__link:hover .user-menu__icon {
+  filter: var(--user-menu-icon-hover-color);
+}
+.user-menu__icon {
+  width: 18px;
+  height: 18px;
+  filter: var(--user-menu-icon-color);
 }
 
 .navbar-btn {

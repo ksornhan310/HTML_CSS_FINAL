@@ -43,7 +43,7 @@ html {
     // Product
     --product-bg-color: #fff;
     --product-shadow-color: rgba(237, 237, 246, 0.2);
-    
+
     // Filter form
     --filter-form-bg-color: #fff;
     --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
@@ -54,6 +54,7 @@ html {
 
     // Auth
     --auth-content-bg-color: #fff;
+
     @include abstracts.screen(md) {
         --auth-intro-bg-color: #fff
     }
@@ -71,7 +72,7 @@ html {
     // Breadcrumbs
     --breadcrumbs-bg-color: #F6F6F6;
     --breadcrumbs-shadow-color: rgba(237, 237, 246, 0.2);
-    
+
     @include abstracts.screen(md) {
         --breadcrumbs-bg-color: #fff;
     }
@@ -127,4 +128,9 @@ html {
     // Account info
     --account-info-bg-color: #f6f6f6;
     --profile-info-icon-bg-color: #fff;
+
+    // User menu
+    --user-menu-link-color: #666;
+    --user-menu-icon-color: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(3%) hue-rotate(314deg) brightness(96%) contrast(87%);
+    --user-menu-icon-hover-color: brightness(0) saturate(100%) invert(7%) sepia(36%) saturate(1091%) hue-rotate(210deg) brightness(101%) contrast(96%);
 }

@@ -193,6 +193,7 @@ function initJsToggle() {
     };
 }
 
+// Open one and other one close
 window.addEventListener("template-loaded", exclusiveJsToggle);
 function exclusiveJsToggle() {
     const buttons = $$(".ex-js-toggle");
@@ -216,16 +217,23 @@ function exclusiveJsToggle() {
                 return;
             }
 
+            if (targetElement.classList.contains("show")) {
+                targetElement.classList.remove("show");
+                return;
+            }
+
             buttons.forEach(otherButton => {
                 const otherTargetId = otherButton.getAttribute("toggle-target");
                 const otherElement = $(otherTargetId);
+                if (!otherElement) {
+                    console.error(`Không tìm thấy phần tử "${otherTargetId}"`);
+                    return;
+                }
                 if (otherElement.classList.contains("show")) otherElement.classList.remove("show");
             })
 
             targetElement.classList.toggle("show");
         };
-
-
     });
 
     document.onclick = function (e) {
@@ -354,4 +362,26 @@ window.addEventListener("template-loaded", () => {
         });
     });
 });
+
+/**
+ * Switch theme
+ */
+
+window.addEventListener("template-loaded", () => {
+    const switchBtn = document.querySelector("#switch-theme-btn");
+    if (switchBtn) {
+        switchBtn.onclick = function () {
+            const isDark = localStorage.dark === "true";
+            document.querySelector("html").classList.toggle("dark", !isDark);
+            localStorage.setItem("dark", !isDark);
+            switchBtn.querySelector("span").textContent = isDark ? "Dark mode" : "Light mode";
+        };
+        const isDark = localStorage.dark === "true";
+        switchBtn.querySelector("span").textContent = isDark ? "Light mode" : "Dark mode";
+    }
+});
+
+const isDark = localStorage.dark === "true";
+document.querySelector("html").classList.toggle("dark", isDark);
+
 

@@ -60,7 +60,7 @@
                                 <h3 class="profile-menu__title">Manage Account</h3>
                                 <ul class="profile-menu__list">
                                     <li>
-                                        <a href="#!" class="profile-menu__link">
+                                        <a href="./edit-personal-info.html" class="profile-menu__link">
                                             <span class="profile-menu__icon-wrap">
                                                 <img src="./assets/icons/profile.svg" alt="" class="icon">
                                             </span>
@@ -170,26 +170,25 @@
                                 <!-- Form row 1 -->
                                 <div class="form__row">
                                     <div class="form__group">
-                                        <label for="card-cvv" class="form__label form-card__label">First Name</label>
+                                        <label for="first-name" class="form__label form-card__label">First Name</label>
                                         <div class="form__text-input">
-                                            <input type="text" name="" id="card-cvv" placeholder="CVV"
-                                                class="form__input" required>
+                                            <input type="text" name="" id="first-name" placeholder="First name"
+                                                class="form__input" required min="2">
                                             <img src="./assets/icons/form-error.svg" alt=""
                                                 class="form__input-icon--error">
                                         </div>
-                                        <p class="form__error">CVV cannot be empty</p>
+                                        <p class="form__error">First name cannot be empty</p>
                                     </div>
 
                                     <div class="form__group">
-                                        <label for="phone-number" class="form__label form-card__label">Phone
-                                            Number</label>
+                                        <label for="last-name" class="form__label form-card__label">Last name</label>
                                         <div class="form__text-input">
-                                            <input type="tel" name="" id="phone-number" placeholder="Phone number"
-                                                class="form__input" required min="10">
+                                            <input type="text" name="" id="last-name" placeholder="Last name"
+                                                class="form__input" required min="2">
                                             <img src="./assets/icons/form-error.svg" alt=""
                                                 class="form__input-icon--error">
                                         </div>
-                                        <p class="form__error">Phone number cannot be empty</p>
+                                        <p class="form__error">Last name cannot be empty</p>
                                     </div>
                                 </div>
 
@@ -223,25 +222,25 @@
                                 <!-- Form row 3 -->
                                 <div class="form__row">
                                     <div class="form__group">
-                                        <label for="first-name" class="form__label form-card__label">CVV</label>
+                                        <label for="cvv" class="form__label form-card__label">CVV</label>
                                         <div class="form__text-input">
-                                            <input type="text" name="" id="first-name" placeholder="First name"
+                                            <input type="text" name="" id="cvv" placeholder="CVV"
                                                 class="form__input" required>
                                             <img src="./assets/icons/form-error.svg" alt=""
                                                 class="form__input-icon--error">
                                         </div>
-                                        <p class="form__error">First name cannot be empty</p>
+                                        <p class="form__error">CVV cannot be empty</p>
                                     </div>
 
                                     <div class="form__group">
-                                        <label for="last-name" class="form__label form-card__label">Last Name</label>
+                                        <label for="phone-number" class="form__label form-card__label">Phone</label>
                                         <div class="form__text-input">
-                                            <input type="text" name="" id="last-name" placeholder="Last name"
+                                            <input type="tel" name="" id="phone-number" placeholder="Phone number"
                                                 class="form__input" required>
                                             <img src="./assets/icons/form-error.svg" alt=""
                                                 class="form__input-icon--error">
                                         </div>
-                                        <p class="form__error">Last name cannot be empty</p>
+                                        <p class="form__error">Phone number cannot be empty</p>
                                     </div>
                                 </div>
 

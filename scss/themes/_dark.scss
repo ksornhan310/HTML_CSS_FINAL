@@ -117,4 +117,9 @@ html.dark {
     // Account info
     --account-info-bg-color: #292E39;
     --profile-info-icon-bg-color: #171C28;
+
+    // User menu
+    --user-menu-link-color: #fff;
+    --user-menu-icon-color: brightness(0) saturate(100%) invert(47%) sepia(0%) saturate(4659%) hue-rotate(78deg) brightness(85%) contrast(95%);
+    --user-menu-icon-hover-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(136deg) brightness(104%) contrast(101%);
 }
